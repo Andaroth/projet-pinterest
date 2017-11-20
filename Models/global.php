@@ -3,4 +3,5 @@
   define("V","./Views/");
   define("C","./Controllers/");
   
+  define("UP","./uploads/");
 ?>
