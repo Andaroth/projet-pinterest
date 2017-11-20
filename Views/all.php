@@ -12,4 +12,4 @@
     // include $inPage; 
   ?> 
 </body> 
-</html>
+</html> <!-- suck my dick kraken -->
