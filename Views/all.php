@@ -7,9 +7,8 @@
 <body> 
   <?php  
     include V."header.php"; 
-    include V."main.php"; 
      
-    // include $inPage; 
+    include $inPage; 
   ?> 
 </body> 
 </html> <!-- suck my dick kraken -->
