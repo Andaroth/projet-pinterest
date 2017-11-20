@@ -1,16 +1,13 @@
 <?php
-  $page= isset($_GET['page']) ? htmlentities($_GET['page']) ; 'default';
-
-  require_once(Views . 'header.php');
-
+  $page= isset($_GET['page']) ? htmlentities($_GET['page']) ; 'main';
   switch ($page) {
-    case 'functions':
-      include(Controllers . 'functions.php');
+    case 'admin':
+      $load = V.$page.".php";
       break;
-
-    case
-
+    default:
+      $load = V.$page.".php";
       break;
   }
+  $inPage = $load;
 
  ?>
