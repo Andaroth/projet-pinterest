@@ -7,7 +7,6 @@
 <body> 
   <?php  
     include V."header.php"; 
-     
     include $inPage; 
   ?> 
 </body> 
