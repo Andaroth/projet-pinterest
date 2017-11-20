@@ -3,6 +3,7 @@
 <head> 
   <meta charset="UTF-8"> 
   <title><?= "hello world" ?></title> 
+  <link rel="stylesheet" href="./Views/css/style.css" />
 </head> 
 <body> 
   <?php  
