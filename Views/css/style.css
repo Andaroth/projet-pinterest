@@ -1,2 +1,26 @@
 /* je vais détruire git avec des barres rouillées */
-body {}
+body {
+  padding: 15px;
+}
+
+.topbar {
+  display: block;
+  width: 100%;
+  height: 80px;
+  background: red;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.flright {
+  position: absolute;
+  right: 35px;
+}
+.flright * {
+  display: inline-block;
+}
+.calltoaction {
+  display: block;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
