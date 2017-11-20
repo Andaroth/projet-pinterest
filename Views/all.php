@@ -11,4 +11,4 @@
     include $inPage; 
   ?> 
 </body> 
-</html> <!-- suck my dick kraken -->
+</html>
