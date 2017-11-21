@@ -1,18 +1,40 @@
 /* je vais détruire git avec des barres rouillées */
-body {}
-.container{
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-  overflow-y:hidden;
-  padding-top: 100px;
+.grid-item {
+  width: 200px;
+  margin-bottom: -30px;
 }
-.container > a {
-  width: 25%;
-  overflow: hidden;
 
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
 }
-.container img{
+
+.grid-item img{
   width: 100%;
 
 }
+.topbar {
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.flright {
+  position: absolute;
+  right: 20px;
+}
+.flright * {
+  display: inline-block;
+}
+.calltoaction {
+  display: block;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+>>>>>>> axel
