@@ -5,5 +5,5 @@
   $dbuser = "root_pinterest";
   $dbpass = "pinterest";
 
-  
+
 ?>
