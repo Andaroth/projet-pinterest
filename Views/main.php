@@ -50,6 +50,7 @@
       <p></p>
     </a>
   </main>
+<<<<<<< HEAD
 <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
 <script type="text/javascript">
 var elem = document.querySelector('.grid');
@@ -65,3 +66,5 @@ var msnry = new Masonry( '.grid', {
   gutter: 0,
 });
 </script>
+=======
+>>>>>>> axel
