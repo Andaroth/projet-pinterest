@@ -2,15 +2,17 @@
 body {}
 .container{
   display: flex;
-  flex-direction:row;
   width: 100%;
-  height: 100vh;
+  flex-wrap: wrap;
   overflow-y:hidden;
   padding-top: 100px;
 }
 .container > a {
   width: 25%;
-  background: grey;
-  border: 1px solid black;
-  box-sizing: border-box;
+  overflow: hidden;
+
+}
+.container img{
+  width: 100%;
+
 }
