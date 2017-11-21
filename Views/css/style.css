@@ -113,12 +113,17 @@ a.searchclic:hover {
   padding: 5px 20px;
   border-radius: 3px;
   background: firebrick;
+  border: 2px solid firebrick;
   color: white;
   text-decoration: none;
   margin: 5px 10px;
   transition: .2s ease-out;
+  box-sizing: border-box;
 }
 .calltoaction:hover {
+  background: transparent;
+  border: 2px solid firebrick;
+  color: firebrick;
   transform: scale(.9);
 }
 .calltoaction:last-child {
