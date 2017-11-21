@@ -82,7 +82,7 @@ a.searchclic:hover {
 .searchbox > * {
   float: left;
 }
-.searchbar { 
+.searchbar {
   display: inline-block;
   height: 40px;
   padding: 5px;
@@ -124,9 +124,8 @@ a.searchclic:hover {
 .calltoaction:last-child {
   margin-right: 0;
 }
-
 .grid-item {
-  width: 200px;
+  width: 230px;
   margin-bottom: -30px;
 }
 /* Delphine */
