@@ -1,6 +1,6 @@
 <?php
 
-	class register{
+	class Register {
 		function __construct() {
 
 			if (  (isset($_POST["name"])) &&
@@ -12,8 +12,6 @@
 				$mail = $_POST['mail'];
 				$mdp = $_POST['pass'];
 				$mdp = hash("sha256", htmlentities($_POST['pass']) ); //recupere le mdp de la table qui correspond au login du visiteur
-
-				$sql= "SELECT * FROM users WHERE name='".$name." AND mail=".$name"";
 
 				// $query = $bdd->prepare("INSERT INTO users (name, mail, pass) VALUES (".$username.",".$mail.",".$mdp.")"));
 			}
