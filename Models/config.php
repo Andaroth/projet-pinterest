@@ -1,6 +1,6 @@
 <?php
   // auth to db
-  $dbhost = "vps365316.ovh.net"; //chemin vers le serveur
+  $dbhost = "localhost"; //chemin vers le serveur
   $dbname = "projet_pinterest"; //nom de la base de données
   $dbuser = "root_pinterest"; // nom utilisateur pour se connecter
   $dbpass = "pinterest"; // mot de passe pour se connecter
