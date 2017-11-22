@@ -1,0 +1,156 @@
+body {
+  margin: 20px;
+  box-sizing: border-box;
+  height: 100vh;
+  box-sizing: border-box;
+  font-family: "Open Sans";
+}
+body:before {
+  display: block;
+  content: "";
+  position: fixed;
+  width: 20px;
+  right: 0;
+  height: 100%;
+  background: white;
+  z-index: 10;
+}
+body:after {
+  display: block;
+  content: "";
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  height: 20px;
+  background: white;
+  z-index: 10;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: Nunito;
+}
+.topbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: white;
+  display: block;
+  width: 100%;
+  height: 80px;
+  box-sizing: border-box;
+  z-index: 10;
+}
+.flright {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+.flright > * {
+  float: left;
+}
+.flright a.profile {
+  line-height: 40px;
+  text-align: center;
+  display: block;
+  height: 40px;
+  width: 40px;
+  border: 1px solid black;
+  border-radius: 50%;
+  box-sizing: border-box;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+a.searchclic {
+  line-height: 40px;
+  text-align: center;
+  display: block;
+  height: 40px;
+  width: 40px;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  margin: 0 10px;
+  margin-left: 0;
+  border-radius: 0 3px 3px 0;
+  text-decoration: none;
+  color: black;
+  transition: .2s ease;
+}
+a.searchclic:hover {
+  background: firebrick;
+}
+.hidden {
+  display: none;
+}
+.searchbox > * {
+  float: left;
+}
+.searchbar { 
+  display: inline-block;
+  height: 40px;
+  padding: 5px;
+  border: 1px solid grey;
+  border-radius: 5px 0 0 5px;
+  box-sizing: border-box;
+  width: 450px;
+}
+.searchbar:focus {
+  background: #EFEFEF;
+}
+.searchform > a {
+  text-align: center;
+  line-height: 40px;
+  overflow: hidden;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  box-sizing: border-box;
+  background: grey;
+  float: right;
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+}
+.calltoaction {
+  display: block;
+  padding: 5px 20px;
+  border-radius: 3px;
+  background: firebrick;
+  border: 2px solid firebrick;
+  color: white;
+  text-decoration: none;
+  margin: 5px 10px;
+  transition: .2s ease-out;
+  box-sizing: border-box;
+}
+.calltoaction:hover {
+  background: transparent;
+  border: 2px solid firebrick;
+  color: firebrick;
+  transform: scale(.9);
+}
+.calltoaction:last-child {
+  margin-right: 0;
+}
+.grid {
+  top: 60px;
+  background: lightgrey;
+}
+.grid-item {
+  width: 25%;
+  min-width: 150px;
+  margin-bottom: -30px;
+  overflow: hidden;
+}
+.grid-item a {
+  min-width: 100%;
+}
+/* Delphine */ 
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.grid-item img{
+  width: 100%;
+}
