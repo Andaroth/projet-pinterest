@@ -13,7 +13,7 @@ $dbpass = "pinterest";
 
   $connect = mysql_connect("localhost/projet-pinterest", "name", "mail", "pass")
     if (!$connect) {
-      die("Impossible de se connecter : " .mysql_error());
+      or die("Impossible de se connecter : " .mysql_error());
     }
   echo "Connexion réussie";
   mysql_close($connect);
@@ -24,7 +24,7 @@ $dbpass = "pinterest";
 
 
 
-
+ // inscription test
   class register{
     function __construct() {
 
@@ -39,6 +39,29 @@ $dbpass = "pinterest";
         $mdp = hash("sha256", htmlentities($_POST['pass']) ); //recupere le mdp de la table qui correspond au login du visiteur
 
         $sql= "SELECT * FROM users WHERE name='".$name." AND mail=".$name"";
+      }
+    }
+  }
+
+
+
+    mysql_connect('localhost', 'root', '');
+    mysql_select_db('bdd');
+
+    if ( (isset($_POST["name"]) &&
+          (isset($_POST['mail']) &&
+          (isset($_POST["pass"])
+      )
+      {
+      $name = mysql_real_escape_string($_POST['name']);
+      $mail = mysql_real_escape_string($_POST['mail']);
+      $pass=mysql_real_escape_string($_POST['pass']);
+
+      $result =mysql_query('update projet-pinterest set pseudo="'.$name.'", mail="'.$mail.'", pass="'.$pass.'"')or die("Requete pas comprise");
+      }
+
+
+
 
   // $req =$bdd->prepare("SELECT * FROM users WHERE mail= :mail AND pass= :pass");
   // $req->execute(array(
