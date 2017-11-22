@@ -1,4 +1,12 @@
 $(document).ready(function() {
+  var vWidth = $('body').width();
+  var vHeight = $('body').height();
+  
+  $(window).resize(function() {
+    vWidth = $('body').width();
+    vHeight = $('body').height();
+    console.log(vWidth+"*"+vHeight);
+  });
   
   var elem = document.querySelector('.grid');
   var msnry = new Masonry( elem, {
