@@ -10,7 +10,7 @@
   <?php
     include V."header.php";
     include $inPage;
-    include V."jscript.php";
+    include V."jscript.php"; 
   ?>
 </body>
 </html>
