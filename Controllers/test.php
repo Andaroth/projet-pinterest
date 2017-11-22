@@ -10,22 +10,43 @@ $dbpass = "pinterest";
   catch(Exception $e) {
     die('Erreur : '.$e->getMessage());
   }
-  $req =$bdd->prepare("SELECT * FROM users WHERE mail= :mail AND pass= :pass");
-  $req->execute(array(
-    'name'=>$name,
-    'mail'=>$mail,
-    'pass'=>$pass
-  ));
-  $resultat = $req->fetchAll();
+
+  $connect = mysql_connect("localhost/projet-pinterest", "name", "mail", "pass")
+    if (!$connect) {
+      die("Impossible de se connecter : " .mysql_error());
+    }
+  echo "Connexion réussie";
+  mysql_close($connect);
+
+  // mysql_connect => ouvrir une connexion à un serveur mySQL
 
 
 
 
 
 
+  class register{
+    function __construct() {
 
+      if (  (isset($_POST["name"])) &&
+            (isset($_POST["mail"])) &&
+            (isset($_POST["pass"]))
+          )
+      {
+        $name = $_POST['name'];
+        $mail = $_POST['mail'];
+        $mdp = $_POST['pass'];
+        $mdp = hash("sha256", htmlentities($_POST['pass']) ); //recupere le mdp de la table qui correspond au login du visiteur
 
+        $sql= "SELECT * FROM users WHERE name='".$name." AND mail=".$name"";
 
+  // $req =$bdd->prepare("SELECT * FROM users WHERE mail= :mail AND pass= :pass");
+  // $req->execute(array(
+  //   'name'=>$name,
+  //   'mail'=>$mail,
+  //   'pass'=>$pass
+  // ));
+  // $resultat = $req->fetchAll();
 
 
 // $req = $bdd->prepare('INSERT INTO users(id, name, mail, date, admin) VALUES(:id, :name, :mail, :date, :admin)');
