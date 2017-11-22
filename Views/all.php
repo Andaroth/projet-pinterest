@@ -7,10 +7,10 @@
   <link rel="stylesheet" href="./Views/css/style.css" />
 </head>
 <body>
-  <?php include V."header.php"; ?>
-  <main>
-    <?php include $inPage; ?>
-  </main>
-  <?php include V."jscript.php"; ?>
+  <?php
+    include V."header.php";
+    include $inPage;
+    include V."jscript.php"; 
+  ?>
 </body>
 </html>
