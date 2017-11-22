@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `projet_pinterest`
 --
+CREATE DATABASE projet_pinterest;
+use projet_pinterest;
 
 -- --------------------------------------------------------
 
@@ -30,7 +32,8 @@ CREATE TABLE `categories` (
   `id` int(11) NOT NULL,
   `nom` varchar(255) NOT NULL,
   `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+-- MyISAM supporte bien les requêtes de recherches de texte
 
 -- --------------------------------------------------------
 
@@ -43,8 +46,9 @@ CREATE TABLE `img` (
   `url` text NOT NULL,
   `titre` varchar(255) NOT NULL,
   `description` text NOT NULL,
+  `date` timestamp DEFAULT CURRENT_TIMESTAMP,
   `userID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -56,6 +60,7 @@ CREATE TABLE `img_cat` (
   `id_images` int(11) NOT NULL,
   `id_categories` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+-- Ici j'utilise InnoDB pour gérer les clés étrangères
 
 -- --------------------------------------------------------
 
@@ -67,9 +72,10 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `mail` varchar(255) NOT NULL,
-  `date` date NOT NULL,
+  `pass` varchar(65) NOT NULL,
+  `date` timestamp DEFAULT CURRENT_TIMESTAMP,
   `admin` tinyint(1) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 --
 -- Index pour les tables exportées

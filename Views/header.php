@@ -2,13 +2,13 @@
     <a href="./"><img src="./" alt="Logo"></a>
     <div class="flright">
       <div class="searchbox">
-        <a href="#">Rechercher</a>
-        <form id="searchform" action="./" method="get">
-          <a href="#" id="opencat"></a>
+        <form id="searchform" class="searchform" action="./" method="get">
           <input type="text" class="searchbar" />
+          <a href="#" id="opencat">&equiv;<span class="hidden">Catégories</span></a>
         </form>
+        <a class="searchclic" href="#">&#128269;<!--&cudarrr;--><span class="hidden">Rechercher</span></a>
       </div>
-      <a href="#">Profil</a>
-      <a href="#" class="calltoaction">Login</a>
+      <a class="profile" href="#" alt="Profil">&#128126;<span class="hidden">Profil</span></a>
+      <a href="#" class="calltoaction">Se connecter</a>
     </div>
   </nav>
