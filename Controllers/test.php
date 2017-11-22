@@ -1,4 +1,8 @@
 <?php
+$dbhost = "localhost"; //chemin vers le serveur
+$dbname = "projet_pinterest"; //nom de la base de données
+$dbuser = "root_pinterest"; // nom utilisateur pour se connecter
+$dbpass = "pinterest";
 
   try {
     $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname.';charset=utf8',$dbuser,$dbpass);
@@ -6,11 +10,11 @@
   catch(Exception $e) {
     die('Erreur : '.$e->getMessage());
   }
-  $req =$bdd->prepare("SELECT name FROM users WHERE mail= :mail AND pass= :pass");
+  $req =$bdd->prepare("SELECT * FROM users WHERE mail= :mail AND pass= :pass");
   $req->execute(array(
     'name'=>$name,
     'mail'=>$mail,
-    'pass'=>$pass,
+    'pass'=>$pass
   ));
   $resultat = $req->fetchAll();
 

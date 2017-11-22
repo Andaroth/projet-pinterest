@@ -1,21 +1,26 @@
 <?php
-// Connexion à la base de données.
-	try {
-		$bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname.';charset=utf8',$dbuser,$dbpass);
-	}
-	catch(Exception $e) {
-	  die('Erreur : '.$e->getMessage());
+
+	class register{
+		function __construct() {
+
+			if (  (isset($_POST["mail"])) &&
+					  (isset($_POST["name"])) )
+			{
+				$username = $_POST['name'];
+				$mail = $_POST['mail'];
+				$mdp = hash("sha256", htmlentities($_POST['pass']) );
+				// $query = $bdd->prepare("INSERT INTO users (name, mail, pass) VALUES (".$username.",".$mail.",".$mdp.")"));
+			}
+
+		}
+
 	}
 
-	include('./login.php');
-	$username = $_POST['username'];
-	$mail = $_POST['mail'];
-	$mdp = hash("sha256", htmlentities($_POST['mdp']) );
 
-	$query = $bdd->prepare("INSERT INTO users (name, mail, pass) VALUES (".$username.",".$mail.",".$mdp.")");
+
 	// $query -> execute([".$username.",".$mail.",".$mdp."]);
 	// $recup = $query->fetchAll(PDO::FETCH_OBJ); //on recupere la liste des inscription
-	echo $query;
+	// echo $query;
 
 
 // Inscription sur le siteweb, verification adresse eamil : nico
@@ -36,8 +41,8 @@
   //     $erreur = "correct";
   //   }
  ?>
- <form class="formulaire" action="index.php?action=class.php" method="post">
-   <!-- <h1>Connecte toi</h1> -->
+ <!-- <form class="formulaire" action="index.php?action=class.php" method="post">
+   <!-- <h1>Connecte toi</h1>
     <label for="username">Veuillez indiquer votre Pseudo ou votre adresse email </label>
     <input type="text" name="username" id="username" placeholder="Votre pseudo ou email"><br/>
 
@@ -46,4 +51,4 @@
 
     <input type="submit" name="button" value="Se Connecter">
 
- </form>
+ </form> -->
