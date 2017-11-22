@@ -1,7 +1,6 @@
 body {
   margin: 20px;
   box-sizing: border-box;
-  overflow: hidden;
   height: 100vh;
   box-sizing: border-box;
   font-family: "Open Sans";
@@ -30,12 +29,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Nunito;
 }
 .topbar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: white;
   display: block;
   width: 100%;
-  height: 40px;
+  height: 80px;
   box-sizing: border-box;
   z-index: 10;
-  margin-bottom: 20px;
 }
 .flright {
   position: absolute;
@@ -129,9 +131,18 @@ a.searchclic:hover {
 .calltoaction:last-child {
   margin-right: 0;
 }
+.grid {
+  top: 60px;
+  background: lightgrey;
+}
 .grid-item {
-  width: 200px;
+  width: 25%;
+  min-width: 150px;
   margin-bottom: -30px;
+  overflow: hidden;
+}
+.grid-item a {
+  min-width: 100%;
 }
 /* Delphine */
 .grid:after {
