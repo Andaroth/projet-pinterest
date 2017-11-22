@@ -130,16 +130,11 @@ a.searchclic:hover {
   margin-right: 0;
 }
 .grid-item {
-  width: 230px;
+  width: 25%;
   margin-bottom: -30px;
 }
-/* Delphine */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-}
 
+/* Delphine */
 .grid-item img{
   width: 100%;
 }
