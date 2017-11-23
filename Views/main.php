@@ -1,9 +1,7 @@
   <main id="home">
-   <div class="grid">
-     <a class="grid-item" href="#">
-        <img src="<?= mUP ?>adult-travel.jpg" alt="road">
-      </a>
-      <a class="grid-item" href="#">
+  <div class="grid">
+    <a class="grid-item" href="#"><img src="<?= mUP ?>adult-travel.jpg" alt="road"></a>
+    <a class="grid-item" href="#">
         <img src="<?= mUP ?>autumn-nature.jpg" alt="autumn">
       </a>
       <a class="grid-item" href="#">
@@ -29,6 +27,6 @@
       </a>
       <a class="grid-item" href="#">
         <img src="<?= mUP ?>forest-nature.jpg" alt="forest">
-      </a>
-   </div>
-  </main>
+    </a>
+  </div>
+</main>
