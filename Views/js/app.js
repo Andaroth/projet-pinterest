@@ -1,4 +1,24 @@
 $(document).ready(function() {
+  
+  $("#profilicon").click(function(e) {
+    e.preventDefault();
+    $("#usermenu").toggleClass("hidden");
+  });
+  
+  $("#opencat").click(function(e) {
+    e.preventDefault();
+    $("#catlist").toggleClass("hidden");
+    $("#opencat").toggleClass("firebrickbg");
+  });
+  
+  $("#searchbar").click(function(){
+    var barvar = $(this).val();
+    if (barvar == "Faire une recherche...") {
+      $("#searchbar").val("");
+    }
+  });
+  
+  // masonry
   var vWidth = $('body').width();
   var vHeight = $('body').height();
   
