@@ -1,5 +1,14 @@
 $(document).ready(function() {
   
+  /*$(document).click(function(){
+    if (!($("#catlist").hasClass("hidden"))) {
+      $("#catlist").addClass("hidden");
+    }
+    if (!($("#usermenu").hasClass("hidden"))) {
+      $("#usermenu").addClass("hidden");
+    }
+  });*/
+  
   $("#profilicon").click(function(e) {
     e.preventDefault();
     $("#usermenu").toggleClass("hidden");
@@ -9,6 +18,7 @@ $(document).ready(function() {
     e.preventDefault();
     $("#catlist").toggleClass("hidden");
     $("#opencat").toggleClass("firebrickbg");
+    $("#searchbar").toggleClass("firebrickborder");
   });
   
   $("#searchbar").click(function(){
@@ -16,6 +26,17 @@ $(document).ready(function() {
     if (barvar == "Faire une recherche...") {
       $("#searchbar").val("");
     }
+  });
+  $("#searchbar").focusout(function(){
+    var barvar = $(this).val();
+    if (barvar == "") {
+      $("#searchbar").val("Faire une recherche...");
+    }
+  });
+  
+  $("#home").scroll(function(){
+    $("#usermenu").addClass("hidden");
+    $("#catlist").addClass("hidden");
   });
   
   // masonry

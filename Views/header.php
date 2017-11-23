@@ -4,8 +4,8 @@
       <div class="searchbox">
         <form id="searchform" class="searchform" action="./" method="get">
           <input type="text" id="searchbar" class="searchbar" value="Faire une recherche..." />
-          <a href="#" id="opencat" class="opencat">&equiv;<span class="hidden">Catégories</span></a>
         </form>
+        <a href="#" id="opencat" class="opencat">&equiv;<span class="hidden">Catégories</span></a>
         <?php include V."categorylist.php"; ?>
         <a class="searchclic" href="#">&#128269;<!--&cudarrr;--><span class="hidden">Rechercher</span></a>
       </div>
