@@ -13,20 +13,18 @@
       
     }
     .modalphoto {
-      position: fixed;
       display: block;
-      top: 0;
-      left: 0;
-      height: 100vh;
       z-index: 15;
       background: #2B2B2B;
       color: white;
       padding: 100px 50px 30px 50px;
       box-sizing: border-box;
-      width: 100%;
       text-align: center;
-      overflow-y: scroll;
-      transition: 1s ease-in-out;
+      box-sizing: border-box;
+      margin: 0 20px;
+      height: 100%;
+      overflow-y: auto;
+      direction: rtl;
     }
     .modalphoto:before {
       display: block;
