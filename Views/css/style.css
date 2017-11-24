@@ -130,6 +130,7 @@ a.searchclic:hover {
   box-sizing: border-box;
   border-top: 5px solid firebrick;
   transition: opacity 1s ease;
+  border-radius: 0 0 5px 5px;
 }
 .catlist ul {
   float: left;
