@@ -35,6 +35,8 @@ class account{
 		} // else end
 	} // func signup end
 
+	//$call = new __construct(); //je sais pas trop comment on appelle la fnc construct mais j'pense que c'est ça qui bug..
+
 	private function Login($name, $pass)
 	{
 		global $bdd;
