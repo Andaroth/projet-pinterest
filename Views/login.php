@@ -1,5 +1,4 @@
-<form class="formulaire" action="./?page=login" method="post">
-  <!-- <h1>Connecte toi</h1> -->
+<form class="formulaire" action="./" method="post">
    <label for="username">Veuillez indiquer votre Pseudo ou votre adresse email </label>
    <input type="text" name="username" id="username" placeholder="Votre pseudo ou email"><br/>
 
