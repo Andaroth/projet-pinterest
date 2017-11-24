@@ -1,5 +1,5 @@
 <nav class="topbar">
-    <a href="./"><img src="./" alt="Logo"></a>
+    <a class="sitelogo" href="./"><img id="sitelogo" src="<?= V ?>img/Pinto.svg" alt="Logo"></a>
     <div class="flright">
       <div class="searchbox">
         <form id="searchform" class="searchform" action="./" method="get">

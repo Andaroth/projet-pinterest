@@ -22,6 +22,19 @@ h1, h2, h3, h4, h5, h6 {
   box-sizing: border-box;
   z-index: 50;
 }
+#sitelogo {
+  height: 100%;
+}
+a.sitelogo {
+  display: block;
+  height: 80px;
+  width: 80px;
+  transition: .2s ease-out;
+}
+a.sitelogo:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
 .flright {
   position: absolute;
   right: 20px;
