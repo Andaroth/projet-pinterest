@@ -232,7 +232,90 @@ a.searchclic:hover {
   border-color: firebrick;
 }
 /*modal*/
+
 .logo{
-  width: 50px;
-  height: 50px; 
+  display: block;
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+}
+.modal-content{
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+.modal-content span{
+  display: block;
+  float: right;
+}
+.signin {
+  width: 45%;
+  display: block;
+  float: left;
+  font-size: 12px;
+
+}
+.signup{
+  width: 45%;
+  display: block;
+  float: left;
+  margin-left: 60px;
+  font-size: 12px;
+
+}
+.signin h3,.signup h3{
+  font-size: 14px;
+  text-align: center;
+}
+
+.form1 form input[type=text],.form1 form input[type="password"]{
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.form1 form input[type="password"]{
+  margin-bottom: 20px;
+}
+
+/* Style the submit button */
+.form1 form input[type=submit] {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+.form2 form input[type=text],.form2 form input[type="password"]{
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.form2 form input[type="password"]{
+  margin-bottom: 87px;
+}
+
+/* Style the submit button */
+.form2 form input[type=submit] {
+  width: 68px;
+  background-color: black;
+  color: white;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  text-transform: uppercase;
 }
