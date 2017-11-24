@@ -1,52 +1,32 @@
-  <main id="home" class="grid">
+  <main id="home">
+  <div class="grid">
+    <a class="grid-item" href="#"><img src="<?= mUP ?>adult-travel.jpg" alt="road"></a>
     <a class="grid-item" href="#">
-      <img src="upload/adult-travel.jpg" alt="road">
-      <h3></h3>
-      <p></p>
+        <img src="<?= mUP ?>autumn-nature.jpg" alt="autumn">
+      </a>
+      <a class="grid-item" href="#">
+        <img src="<?= mUP ?>balloon-travel.jpg" alt="balloon">
+      </a>
+      <a class="grid-item" href="#">
+        <img src="<?= mUP ?>bike-travel.jpg" alt="travel">
+      </a>
+      <a class="grid-item" href="#">
+        <img src="<?= mUP ?>blue-nature.jpg" alt="blue_lagon">
+      </a>
+      <a class="grid-item" href="#">
+        <img src="<?= mUP ?>forest-nature.jpg" alt="forest">
+      </a>
+      <a class="grid-item" href="#">
+        <img src="<?= mUP ?>balloon-travel.jpg" alt="balloon">
+      </a>
+      <a class="grid-item" href="#">
+        <img src="<?= mUP ?>bike-travel.jpg" alt="travel">
+      </a>
+      <a class="grid-item" href="#">
+        <img src="<?= mUP ?>blue-nature.jpg" alt="blue_lagon">
+      </a>
+      <a class="grid-item" href="#">
+        <img src="<?= mUP ?>forest-nature.jpg" alt="forest">
     </a>
-    <a class="grid-item" href="#">
-      <img src="upload/autumn-nature.jpg" alt="autumn">
-      <h3></h3>
-      <p></p>
-    </a>
-    <a class="grid-item" href="#">
-      <img src="upload/balloon-travel.jpg" alt="balloon">
-      <h3></h3>
-      <p></p>
-    </a>
-    <a class="grid-item" href="#">
-      <img src="upload/bike-travel.jpg" alt="travel">
-      <h3></h3>
-      <p></p>
-    </a>
-    <a class="grid-item" href="#">
-      <img src="upload/blue-nature.jpg" alt="blue_lagon">
-      <h3></h3>
-      <p></p>
-    </a>
-    <a class="grid-item" href="#">
-      <img src="upload/forest-nature.jpg" alt="forest">
-      <h3></h3>
-      <p></p>
-    </a>
-    <a class="grid-item" href="#">
-      <img src="upload/balloon-travel.jpg" alt="balloon">
-      <h3></h3>
-      <p></p>
-    </a>
-    <a class="grid-item" href="#">
-      <img src="upload/bike-travel.jpg" alt="travel">
-      <h3></h3>
-      <p></p>
-    </a>
-    <a class="grid-item" href="#">
-      <img src="upload/blue-nature.jpg" alt="blue_lagon">
-      <h3></h3>
-      <p></p>
-    </a>
-    <a class="grid-item" href="#">
-      <img src="upload/forest-nature.jpg" alt="forest">
-      <h3></h3>
-      <p></p>
-    </a>
-  </main>
+  </div>
+</main>

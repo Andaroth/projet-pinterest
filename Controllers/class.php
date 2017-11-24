@@ -18,7 +18,24 @@
 
 		}
 
-	}
+	} // class Register end
+
+  class LoadImage {
+    function __construct() {
+      $imageid = isset($_GET["img"]) ? $_GET["img"] : false ;
+      if ($imageid) {
+        $imgurl = getImgData($imageid,"url");
+        echo "a:".$imgurl;
+      }// if $imageid end
+    } // construct end
+    private function getImgData($imageid,$data) {
+      return "get";
+      // return $bdd->exec('SELECT '.$data.' FROM img WHERE id ="'.$imageid.'"');
+    } // getImgData end
+    private function getImgCat($imageid) {
+      
+    } // getImgCat end
+  } // class LoadImage end
 
 
 
@@ -45,14 +62,3 @@
   //     $erreur = "correct";
   //   }
  ?>
- <!-- <form class="formulaire" action="index.php?action=class.php" method="post">
-   <!-- <h1>Connecte toi</h1>
-    <label for="username">Veuillez indiquer votre Pseudo ou votre adresse email </label>
-    <input type="text" name="username" id="username" placeholder="Votre pseudo ou email"><br/>
-
-    <label for="mdp">Veuillez indiquer votre mot de passe</label>
-    <input type="password" name="mdp" id="mdp" placeholder="Votre mot de passe"><br/>
-
-    <input type="submit" name="button" value="Se Connecter">
-
- </form> -->

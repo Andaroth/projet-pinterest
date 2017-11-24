@@ -11,7 +11,6 @@
     include V."header.php";
     include $inPage;
     include V."jscript.php"; 
-    include V."modals.php";
   ?>
 </body>
 </html>
