@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
+-- version 4.6.4
+-- https://www.phpmyadmin.net/
 --
--- Client :  localhost
--- Généré le :  Lun 20 Novembre 2017 à 16:19
--- Version du serveur :  5.7.20-0ubuntu0.16.04.1
--- Version de PHP :  7.0.22-0ubuntu0.16.04.1
+-- Client :  127.0.0.1
+-- Généré le :  Ven 24 Novembre 2017 à 09:35
+-- Version du serveur :  5.7.14
+-- Version de PHP :  5.6.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `projet_pinterest`
 --
+CREATE DATABASE `projet_pinterest`;
+USE `projet_pinterest`
 
 -- --------------------------------------------------------
 
@@ -31,7 +33,6 @@ CREATE TABLE `categories` (
   `nom` varchar(255) NOT NULL,
   `description` text NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
--- MyISAM supporte bien les requêtes de recherches de texte
 
 -- --------------------------------------------------------
 
@@ -44,7 +45,7 @@ CREATE TABLE `img` (
   `url` text NOT NULL,
   `titre` varchar(255) NOT NULL,
   `description` text NOT NULL,
-  `date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `userID` int(11) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
@@ -58,7 +59,6 @@ CREATE TABLE `img_cat` (
   `id_images` int(11) NOT NULL,
   `id_categories` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
--- Ici j'utilise InnoDB pour gérer les clés étrangères
 
 -- --------------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE `users` (
   `name` varchar(255) NOT NULL,
   `mail` varchar(255) NOT NULL,
   `pass` varchar(65) NOT NULL,
-  `date` timestamp DEFAULT CURRENT_TIMESTAMP,
+  `date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `admin` tinyint(1) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
