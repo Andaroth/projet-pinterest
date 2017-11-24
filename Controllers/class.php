@@ -1,9 +1,11 @@
 <?php
 
-class Register {
-		public $bdd;
+class account{
+	// global $bdd;
 
-	function __construct($bdd) {
+	public function __construct() {
+		// extract($_POST);
+		// extract($_GET);
 		if (  (isset($_POST["name"])) &&
 					(isset($_POST["mail"])) &&
 					(isset($_POST["pass"]))
@@ -11,25 +13,45 @@ class Register {
 		{
 			$name = $_POST['name'];
 			$mail = $_POST['mail'];
-			$mdp = $_POST['pass'];
-			$mdp = hash("sha256", htmlentities($_POST['pass']) ); //recupere le mdp de la table qui correspond au login du visiteur
-
-			// $query = $bdd->exec("INSERT INTO users (name, mail, pass) VALUES (".$username.",".$mail.",".$mdp.")"));
-		}
-
+			$pass = $_POST['pass'];
+			$pass = hash("sha256", htmlentities($_POST['pass']) ); // hash le password
+			echo "passed";
+			$this->Signup($name,$mail,$pass);
+		} else { echo "not set"; }
 	}
-	public function Signup($name, $mail, $pass)
+
+	private function Signup($name, $mail, $pass)
 	{
-		$req = $this->bdd->prepare("SELECT * FROM users WHERE name = (?)");
-		$req->execute([$name]);
-		if($req->rowCount() == 1) {
+		global $bdd;
+		$req = $bdd->exec("SELECT * FROM users WHERE name = '".$name."'");
+		if(($req->rowCount()) > 0) {
+			return false;
+		} else {
+			try {
+				$bdd->exec("INSERT INTO users (name, mail, pass) VALUES (".$name.",".$mail.",".$pass.")");
+				return true;
+			} catch(Exception $e){echo "erreur signup: ".($e->getMessage());die();}
+
+		} // else end
+	} // func signup end
+
+	private function Login($name, $pass)
+	{
+		global $bdd;
+		$req = $bdd->exec("SELECT * FROM users WHERE name = '".$name."' AND pass ='".$pass."'");
+		$user_bdd= $req->fetch();
+
+		if($req->rowCount()==1)
+		{
+				$_SESSION ['login'] = true;
+				$_SESSION ['name'] = $user_bdd['name'];
+				$_SESSION ['pass'] = $user_bdd['pass'];
+				return true;
+		} else {
 			return false;
 		}
-		$req = $this->bdd->prepare("INSERT INTO users (name, mail, pass) VALUES (?,?,?)");
-		$req->execute([$name, $mail, $pass]);
-			return true;
-	}
 
+	}
 } // class Register end
 
 class LoadImage {
