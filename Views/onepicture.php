@@ -8,45 +8,4 @@
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam eaque esse, magnam. Dolore animi, omnis blanditiis recusandae! Reiciendis voluptates, quidem quo. Odio, facere dolorem neque aliquam? Similique nemo, veniam ipsa?</p>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam eaque esse, magnam. Dolore animi, omnis blanditiis recusandae! Reiciendis voluptates, quidem quo. Odio, facere dolorem neque aliquam? Similique nemo, veniam ipsa?</p>
   </div>
-  <style>
-    .modal {
-      
-    }
-    .modalphoto {
-      display: block;
-      z-index: 15;
-      background: #2B2B2B;
-      color: white;
-      padding: 100px 50px 30px 50px;
-      box-sizing: border-box;
-      text-align: center;
-      box-sizing: border-box;
-      margin: 0 20px;
-      height: 100%;
-      overflow-y: auto;
-      direction: rtl;
-    }
-    .modalphoto:before {
-      display: block;
-      content: "";
-      position: fixed;
-      width: 20px;
-      top: 0;
-      left: 0;
-      height: 100vh;
-      background: white;
-      z-index: 20;
-    }
-    .modalphoto img {
-      max-width: 100%;
-      max-height: 50vh;
-    }
-    .modalphoto > p {
-      max-width: 50%;
-      margin: 20px auto;
-    }
-    .modalphoto > p:last-child {
-      margin-bottom: 50px;
-    }
-  </style>
   
