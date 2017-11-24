@@ -1,6 +1,5 @@
 <form class="formulaire" action="./" method="post">
-  <!-- <h1>Connecte toi</h1> -->
-   <label for="username">Email or UserName </label>
+    <label for="username">Email or UserName </label>
    <input type="text" name="username" id="username" placeholder="Votre pseudo ou email"><br/>
 
    <label for="mdp">Password</label>
