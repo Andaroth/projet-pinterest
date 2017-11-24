@@ -248,12 +248,12 @@ a.searchclic:hover {
   display: block;
   float: right;
 }
+/* Form signUp et SignIn*/
 .signin {
   width: 45%;
   display: block;
   float: left;
   font-size: 12px;
-
 }
 .signup{
   width: 45%;
@@ -261,13 +261,11 @@ a.searchclic:hover {
   float: left;
   margin-left: 60px;
   font-size: 12px;
-
 }
 .signin h3,.signup h3{
   font-size: 14px;
   text-align: center;
 }
-
 .form1 form input[type=text],.form1 form input[type="password"]{
   width: 100%;
   padding: 12px;
@@ -280,8 +278,6 @@ a.searchclic:hover {
 .form1 form input[type="password"]{
   margin-bottom: 20px;
 }
-
-/* Style the submit button */
 .form1 form input[type=submit] {
   background-color: black;
   color: white;
@@ -305,8 +301,6 @@ a.searchclic:hover {
 .form2 form input[type="password"]{
   margin-bottom: 87px;
 }
-
-/* Style the submit button */
 .form2 form input[type=submit] {
   width: 68px;
   background-color: black;
