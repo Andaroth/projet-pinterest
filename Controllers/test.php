@@ -4,19 +4,53 @@ $dbname = "projet_pinterest"; //nom de la base de données
 $dbuser = "root_pinterest"; // nom utilisateur pour se connecter
 $dbpass = "pinterest";
 
-  try {
-    $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname.';charset=utf8',$dbuser,$dbpass);
-  }
-  catch(Exception $e) {
-    die('Erreur : '.$e->getMessage());
+class register {
+
+  public function __construct() {
+
+
+    try {
+      $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname.';charset=utf8',$dbuser,$dbpass);
+      $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    }
+    catch(Exception $e) {
+      die('Erreur : '.$e->getMessage());
+    }
   }
 
-  $connect = mysql_connect("localhost/projet-pinterest", "name", "mail", "pass")
-    if (!$connect) {
-      or die("Impossible de se connecter : " .mysql_error());
-    }
-  echo "Connexion réussie";
-  mysql_close($connect);
+  public function add($name, $mail, $pass) {
+    $req = this->bdd->prepare("INSERT INTO users(name, mail, pass) VALUES(?,?,?)");
+    $req ->execute([$name, $mail, $pass]);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // $connect = mysql_connect("localhost/projet-pinterest", "name", "mail", "pass")
+  //   if (!=$connect) {
+  //     die("Impossible de se connecter : " .mysql_error());
+  //   } else {
+  //     echo "Connexion réussie";
+  //   }
+  // mysql_close($connect);
 
   // mysql_connect => ouvrir une connexion à un serveur mySQL
 
@@ -45,22 +79,22 @@ $dbpass = "pinterest";
 
 
 
-    mysql_connect('localhost', 'root', '');
-    mysql_select_db('bdd');
-
-    if ( (isset($_POST["name"]) &&
-          (isset($_POST['mail']) &&
-          (isset($_POST["pass"])
-      )
-      {
-      $name = mysql_real_escape_string($_POST['name']);
-      $mail = mysql_real_escape_string($_POST['mail']);
-      $pass=mysql_real_escape_string($_POST['pass']);
-
-      $result =mysql_query('update projet-pinterest set pseudo="'.$name.'", mail="'.$mail.'", pass="'.$pass.'"')or die("Requete pas comprise");
-      }
-
-
+    // mysql_connect('localhost', 'root', '');
+    // mysql_select_db('bdd');
+    //
+    // if ( (isset($_POST["name"]) &&
+    //       (isset($_POST['mail']) &&
+    //       (isset($_POST["pass"])
+    //   )
+    //   {
+    //   $name = mysql_real_escape_string($_POST['name']);
+    //   $mail = mysql_real_escape_string($_POST['mail']);
+    //   $pass=mysql_real_escape_string($_POST['pass']);
+    //
+    //   $result =mysql_query('update projet-pinterest set pseudo="'.$name.'", mail="'.$mail.'", pass="'.$pass.'"')or die("Requete pas comprise");
+    //   }
+    //
+    //
 
 
   // $req =$bdd->prepare("SELECT * FROM users WHERE mail= :mail AND pass= :pass");
@@ -101,6 +135,178 @@ $dbpass = "pinterest";
   //     echo "incorrect";
   //   }
   // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // class register{
+  // 	function __construct() {
+  //
+  // 		if (  (isset($_POST["name"])) &&
+  // 					(isset($_POST["mail"])) &&
+  // 					(isset($_POST["pass"]))
+  // 				)
+  // 		{
+  // 			$name = $_POST['name'];
+  // 			$mail = $_POST['mail'];
+  // 			$mdp = $_POST['pass'];
+  // 			$mdp = hash("sha256", htmlentities($_POST['pass']) ); //recupere le mdp de la table qui correspond au login du visiteur
+  //
+  // 			$sql= "SELECT * FROM users WHERE name='".$name." AND mail=".$name"";
+  // 		}
+  // 	}
+  // }
+  // class db {
+  //
+  // 	public function __construct()
+  // 	{
+  // 		try {
+  // 	    $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname.';charset=utf8',$dbuser,$dbpass);
+  // 	  }
+  // 	  catch(Exception $e) {
+  // 	    die('Erreur : '.$e->getMessage());
+  // 	  }
+  // 	}
+  //
+  // 	public function signup($name, $pass) {
+  // 		$req = $bdd->prepare("SELECT * FROM users WHERE name = (?)");
+  // 		$req->execute([$name]);
+  // 		if ($req->rowcount()==1) {
+  //
+  // 		}
+  // 	}
+  // }
+
+
+
+
+
+  // class Register {
+  // 	function __construct() {
+  // 		$machin=mysql_connect($dbhost, $dbuser, $dbpass);
+  // 		mysql_select_db($bdd);
+  //
+  // 		if (!=$machin) {
+  // 			die("connexion impossible:" . mysql_error());
+  //
+  // 		}
+
+  // 		$connect = mysql_connect("localhost/projet-pinterest", "name", "mail", "pass")
+  // 			if (! $connect) {
+  // 				die("Impossible de se connecter : " .mysql_error());
+  // 			} else {
+  // 				echo "Connexion réussie";
+  // 			}
+  // 		mysql_close($connect);
+  //
+  //
+  // 	// 	if ( (isset($_POST["name"]) &&
+  // 	// 		(isset($_POST['mail']) &&
+  // 	// 		(isset($_POST["pass"])
+  // 	// )
+  // 	// {
+  // 	// $name = mysql_real_escape_string($_POST['name']);
+  // 	// $mail = mysql_real_escape_string($_POST['mail']);
+  // 	// $pass=mysql_real_escape_string($_POST['pass']);
+  // 	//
+  // 	// $result =mysql_query('update projet-pinterest set pseudo="'.$name.'", mail="'.$mail.'", pass="'.$pass.'"')or die("Requete pas comprise");
+  // 	// }
+
+  // 	}
+  // }
+  // $machin = new Register;
+  // $machin-> construct();
+
+
+
+  	// class Register {
+  	// 	function __construct() {
+  	//
+  	// 		if (  (isset($_POST["name"])) &&
+  	// 				  (isset($_POST["mail"])) &&
+  	// 					(isset($_POST["pass"]))
+  	// 				)
+  	// 		{
+  	// 			$name = $_POST['name'];
+  	// 			$mail = $_POST['mail'];
+  	// 			$mdp = $_POST['pass'];
+  	// 			$mdp = hash("sha256", htmlentities($_POST['pass']) ); //recupere le mdp de la table qui correspond au login du visiteur
+  	// 			$point = strpos($mail,".");
+  	// 	    $arobase = strpos($mail,"@");
+  	// 		}
+  	// 			if (($_POST['name'] !="") && ($_POST['mail'] !="") && ($_POST['pass'] !=""))
+  	// 	    //         {
+  	// 	    //           if (isAvailable($_POST['name'])==true || isAvailable($_POST['mail'])==true)
+  	// 	    //           { echo "correct";
+  	// 			// 						else {
+  	// 			// 							echo "incorrect";
+  	// 			// 						}
+  	//
+  	// 	    // if(empty($mail)){
+  	// 	    //   $erreur = "";
+  	// 	    // } else if ($point==""){
+  	// 	    //   $erreur = "Entrez une adresse mail valide. (Il manque surement un .)";
+  	// 	    // } else if ($arobase==""){
+  	// 	    //   $erreur = "Entrez une adresse mail valide. (Il manque surement un @)";
+  	// 	    // } else {
+  	// 	    //   $erreur = "correct";
+  	// 	    // }
+  	// 			// $query = $bdd->prepare("INSERT INTO users (name, mail, pass) VALUES (".$username.",".$mail.",".$mdp.")"));
+  	//
+  	// 		}
+  	//
+  	// 	}
+  	//
+  	// }
+
+
+
+  	// $connect = mysql_connect("localhost/projet-pinterest", "name", "mail", "pass")
+  	// 	if (!$connect) {
+  	// 		or die("Impossible de se connecter : " .mysql_error());
+  	// 	}
+  	// echo "Connexion réussie";
+  	// mysql_close($connect);
+
+  	// $query -> execute([".$username.",".$mail.",".$mdp."]);
+  	// $recup = $query->fetchAll(PDO::FETCH_OBJ); //on recupere la liste des inscription
+  	// echo $query;
+
+
+  // Inscription sur le siteweb, verification adresse eamil : nico
+    class register{
+      $username = $_POST["username"];
+      $mail = $_POST["mail"];
+      $mdp = $_POST["mdp"];
+      $point = strpos($mail,".");
+      $arobase = strpos($mail,"@");
+
+      if(empty($mail)){
+        $erreur = "";
+      } else if ($point==""){
+        $erreur = "Entrez une adresse mail valide. (Il manque surement un .)";
+      } else if ($arobase==""){
+        $erreur = "Entrez une adresse mail valide. (Il manque surement un @)";
+      } else {
+        $erreur = "correct";
+      }
  ?>
  <form class="formulaire" action="index.php?action=class.php" method="post">
    <!-- <h1>Connecte toi</h1> -->
