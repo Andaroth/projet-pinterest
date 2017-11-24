@@ -1,8 +1,9 @@
 <?php
 
 class Register {
-	function __construct() {
+		public $bdd;
 
+	function __construct($bdd) {
 		if (  (isset($_POST["name"])) &&
 					(isset($_POST["mail"])) &&
 					(isset($_POST["pass"]))
@@ -13,9 +14,20 @@ class Register {
 			$mdp = $_POST['pass'];
 			$mdp = hash("sha256", htmlentities($_POST['pass']) ); //recupere le mdp de la table qui correspond au login du visiteur
 
-			$query = $bdd->prepare("INSERT INTO users (name, mail, pass) VALUES (".$username.",".$mail.",".$mdp.")"));
+			// $query = $bdd->exec("INSERT INTO users (name, mail, pass) VALUES (".$username.",".$mail.",".$mdp.")"));
 		}
 
+	}
+	public function Signup($name, $mail, $pass)
+	{
+		$req = $this->bdd->prepare("SELECT * FROM users WHERE name = (?)");
+		$req->execute([$name]);
+		if($req->rowCount() == 1) {
+			return false;
+		}
+		$req = $this->bdd->prepare("INSERT INTO users (name, mail, pass) VALUES (?,?,?)");
+		$req->execute([$name, $mail, $pass]);
+			return true;
 	}
 
 } // class Register end
@@ -37,25 +49,8 @@ class LoadImage {
 	} // getImgCat end
 } // class LoadImage end
 
-// $dbhost = "localhost"; //chemin vers le serveur
-// $dbname = "projet_pinterest"; //nom de la base de données
-// $dbuser = "root_pinterest"; // nom utilisateur pour se connecter
-// $dbpass = "pinterest";
 
-// class register {
-//
-//   public function __construct($name, $mail, $pass) {
-//
-//     // try {
-//     //   $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname.';charset=utf8',$dbuser,$dbpass);
-//     //   $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-// 		//
-//     // }
-//     // catch(Exception $e) {
-//     //   die('Erreur : '.$e->getMessage());
-//     // }
-//   }
-//
+
 //   public function add($name, $mail, $pass) {
 // 		checkmail();
 // 		$req = this->bdd->prepare("INSERT INTO users(name, mail, pass) VALUES(?,?,?)");
