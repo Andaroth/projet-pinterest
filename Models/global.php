@@ -10,4 +10,5 @@
   define("mUP","./upload/mini/");
   define("IMG",V."img/");
   define("mIMG",V."img/mini/");
+  define("imghold", V."img/placeholder.png");
 ?>

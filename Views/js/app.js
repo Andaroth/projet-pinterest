@@ -1,13 +1,35 @@
 $(document).ready(function() {
   
-  /*$(document).click(function(){
-    if (!($("#catlist").hasClass("hidden"))) {
-      $("#catlist").addClass("hidden");
-    }
-    if (!($("#usermenu").hasClass("hidden"))) {
-      $("#usermenu").addClass("hidden");
-    }
-  });*/
+  $("#pseudoinput").attr("value", "Pseudo");
+  
+  $("#mailinput").attr("value", "votre@mail");
+  
+  $(".grid-item").click(function(e) {
+    e.preventDefault();
+    $("#home").addClass("hidden");
+    $("#onepic").removeClass("hidden");
+    
+    var imgurl = $(this).children("img").prop("src");
+    console.log(imgurl);
+    var descr = $(this).children("p").text();
+    var title = $(this).children("h2").text();
+   
+    $("#onepic").children("img").attr("src", imgurl);
+    $("#onepic").children("h2").text(title);
+    $("#onepic").children("p").text(descr);
+  });
+  
+  $("#calltoconnect").click(function(e) {
+    e.preventDefault();
+    // $("#home").addClass("hidden");
+    $("#registermodal").removeClass("hidden");
+  });
+  
+  $(".close").click(function(e) {
+    e.preventDefault();
+    $("#home").removeClass("hidden");
+    $(".modal").addClass("hidden");
+  });
   
   $("#profilicon").click(function(e) {
     e.preventDefault();
