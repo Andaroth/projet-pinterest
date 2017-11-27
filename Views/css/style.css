@@ -235,16 +235,7 @@ a.searchclic:hover {
 .grid-item img{
   width: 100%;
 }
-/* Usable */
-.hidden {
-  display: none;
-}
-.firebrickbg {
-  background-color: firebrick !important;
-}
-.firebrickborder {
-  border-color: firebrick;
-}
+
 /*modal*/
 .modal {
   background: grey;
@@ -375,4 +366,15 @@ a.searchclic:hover {
 }
 a.close {
   float: right;
+}
+
+/* Usable */
+.firebrickbg {
+  background-color: firebrick !important;
+}
+.firebrickborder {
+  border-color: firebrick;
+}
+.hidden {
+  display: none;
 }
