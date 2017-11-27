@@ -1,24 +1,21 @@
 $(document).ready(function() {
   
-  /*$(document).click(function(){
-    if (!($("#catlist").hasClass("hidden"))) {
-      $("#catlist").addClass("hidden");
-    }
-    if (!($("#usermenu").hasClass("hidden"))) {
-      $("#usermenu").addClass("hidden");
-    }
-  });*/
+  $(".grid-item").click(function(e) {
+    e.preventDefault();
+    $("#home").addClass("hidden");
+    $("#onepic").removeClass("hidden");
+  });
   
   $("#calltoconnect").click(function(e) {
     e.preventDefault();
-    $("#home").toggleClass("hidden");
-    $("#registermodal").toggleClass("hidden");
+    $("#home").addClass("hidden");
+    $("#registermodal").removeClass("hidden");
   });
   
-  $("#calltoclose").click(function(e) {
+  $(".close").click(function(e) {
     e.preventDefault();
     $("#home").removeClass("hidden");
-    $("#registermodal").addClass("hidden");
+    $(".modal").addClass("hidden");
   });
   
   $("#profilicon").click(function(e) {

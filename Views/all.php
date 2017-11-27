@@ -11,6 +11,7 @@
     include V."header.php";
     include $inPage;
     include V."modals.php";
+    include V."onepicture.php";
     include V."jscript.php";
   ?>
 </body>
