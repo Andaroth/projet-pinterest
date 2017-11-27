@@ -40,7 +40,7 @@ class Account {
 	private function Signup($name, $mail, $pass)
 	{
 		global $bdd;
-		$req = $bdd->query("SELECT COUNT(*) FROM users WHERE name = '".$name."'");
+		$req = $bdd->query("SELECT COUNT(name) AS count FROM users WHERE name = '".$name."'");
 		$row = $req->fetch();
 		$test = $row['count'];
 		if($test == 0) {
@@ -49,7 +49,7 @@ class Account {
 				echo "passed";
 			} catch(Exception $e){echo "erreur signup: ".($e->getMessage());die();}
 		} else  {
-			echo "existe deja";
+			echo "<div id=\"errormsg\">Ce nom d'utilisateur existe deja !</div>";
 		} // if end
 	} // func signup end
 
@@ -58,7 +58,7 @@ class Account {
 	private function Login($name, $pass)
 	{
 		global $bdd;
-		$req = $bdd->query("SELECT COUNT(*) FROM users WHERE name = '".$name."' AND pass ='".$pass."'");
+		$req = $bdd->query("SELECT COUNT(*) AS count FROM users WHERE name = '".$name."' AND pass ='".$pass."'");
 		$row = $req->fetch();
 		$test = $row['count'];
 		if($test==1)
@@ -67,7 +67,7 @@ class Account {
 				$_SESSION ['name'] = $name;
 				echo "success";
 		} else {
-			echo "mauvais identifiants";
+			echo "<div id=\"errormsg\">Vous avez entré de mauvais identifiants !</div>";
 		}
 
 	}

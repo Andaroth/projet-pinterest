@@ -1,13 +1,22 @@
 $(document).ready(function() {
   
-  /*$(document).click(function(){
-    if (!($("#catlist").hasClass("hidden"))) {
-      $("#catlist").addClass("hidden");
-    }
-    if (!($("#usermenu").hasClass("hidden"))) {
-      $("#usermenu").addClass("hidden");
-    }
-  });*/
+  $(".grid-item").click(function(e) {
+    e.preventDefault();
+    $("#home").addClass("hidden");
+    $("#onepic").removeClass("hidden");
+  });
+  
+  $("#calltoconnect").click(function(e) {
+    e.preventDefault();
+    $("#home").addClass("hidden");
+    $("#registermodal").removeClass("hidden");
+  });
+  
+  $(".close").click(function(e) {
+    e.preventDefault();
+    $("#home").removeClass("hidden");
+    $(".modal").addClass("hidden");
+  });
   
   $("#profilicon").click(function(e) {
     e.preventDefault();
