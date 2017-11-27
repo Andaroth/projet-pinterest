@@ -20,7 +20,7 @@ class Account {
 				} else if ($pass!=$pass2){
 					echo "Les mots de passe ne correspondent pas.";
 				} else {
-					echo "Il manque des informations.";
+				 	echo "Il manque des informations.";
 				}
 				break;
 			case 'login':
