@@ -26,7 +26,11 @@ class Account {
 			case 'login':
 				$name = $_POST["username"];
 				$pass = hash("sha256", htmlentities($_POST['mdp']) );
-				$this->Login($name,$pass);
+				if (empty($name) OR (empty($pass))){
+					echo "Remplissez les champs de connexion.";
+				} else {
+					$this->Login($name,$pass);
+				}
 				break;
 			default: break;
 			// $this->$bdd = new PDO('pgsql:host='.$dbhost.';dbname='.$dbname,$dbuser,$dbpass);
