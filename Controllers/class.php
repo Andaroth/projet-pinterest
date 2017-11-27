@@ -8,11 +8,13 @@ class Account {
 		// extract($_GET);
 		switch($_GET["action"]) {
 			case 'register':
-				$name = $_POST['name'];
-				$mail = $_POST['mail'];
-				$pass = $_POST['pass'];
-				$pass = hash("sha256", htmlentities($_POST['pass']) ); // hash le password
-				$this->Signup($name,$mail,$pass);
+				if () {
+					$name = $_POST['name'];
+					$mail = $_POST['mail'];
+					$pass = $_POST['pass'];
+					$pass = hash("sha256", htmlentities($_POST['pass']) ); // hash le password
+					$this->Signup($name,$mail,$pass);
+				}
 				break;
 			case 'login':
 				$name = $_POST["username"];
