@@ -250,7 +250,7 @@ a.searchclic:hover {
 
 /*modal*/
 .modal {
-  background: grey;
+  /*background: grey;*/
   height: 100%;
   display: block;
   margin: 0 20px;
@@ -305,7 +305,9 @@ a.searchclic:hover {
 .modal-content{
   width: 60%;
   display: block;
-  margin: 0 auto;
+  background: rgba(255,255,255,.7);
+  border-radius: 5px;
+  /*margin: 0 auto;*/
 }
 .modal-content span{
   display: block;
@@ -317,12 +319,13 @@ a.searchclic:hover {
   display: block;
   float: left;
   font-size: 12px;
+  margin-left: 15Px;
 }
 .signup{
   width: 45%;
   display: block;
   float: left;
-  margin-left: 60px;
+  margin-left: 10px;
   font-size: 12px;
 }
 .signin h3,.signup h3{
@@ -330,16 +333,13 @@ a.searchclic:hover {
   text-align: center;
 }
 .form1 form input[type=text],.form1 form input[type="password"]{
-  width: 100%;
+  width: 49%;
   padding: 12px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
-}
-.form1 form input[type="password"]{
-  margin-bottom: 20px;
 }
 .form1 form input[type=submit] {
   background-color: black;
@@ -353,7 +353,7 @@ a.searchclic:hover {
   text-transform: uppercase;
 }
 .form2 form input[type=text],.form2 form input[type="password"]{
-  width: 100%;
+  width: 49%;
   padding: 12px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -361,11 +361,11 @@ a.searchclic:hover {
   box-sizing: border-box;
   resize: vertical;
 }
-.form2 form input[type="password"]{
-  margin-bottom: 87px;
+.inputleft {
+  margin-right: 2%;
 }
 .form2 form input[type=submit] {
-  width: 68px;
+  width: auto;
   background-color: black;
   color: white;
   padding: 12px 10px;
@@ -376,7 +376,10 @@ a.searchclic:hover {
   margin: 0 auto;
   text-transform: uppercase;
 }
-#errormsg {
+form input[type=submit]:hover {
+  background: firebrick;
+}
+#errormsg, #passedmsg {
   background: firebrick;
   display: block;
   position: absolute;
@@ -390,24 +393,41 @@ a.searchclic:hover {
   color: white;
   animation: 8s vanish forwards;
 }
+#passedmsg {
+  background: green;
+}
+#registermodal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#registermodal .modal-content {
+  width: 500px;
+  padding: 50px 10px;
+}
 /* close btn */
 a.close {
   background: firebrick;
   text-decoration: none;
-  width: 60px;
-  height: 60px;
-  line-height: 60px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
   color: white;
   text-align: center;
   border-radius: 50%;
-  position: fixed;
-  top: 100px;
-  right: 40px;
+  position: relative;
+  display: block;
+  float: right;
+  top: -40px;
   font-size: 1.2em;
   transition: .2s ease;
 }
 a.close:hover {
   transform: scale(1.1);
+}
+.fullinput {
+  width: 100% !important;
 }
 /* Usable */
 .firebrickbg {

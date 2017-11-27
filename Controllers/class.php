@@ -46,7 +46,7 @@ class Account {
 		if($test == 0) {
 			try {
 				$bdd->exec("INSERT INTO users (name, mail, pass) VALUES ('".$name."','".$mail."','".$pass."')");
-				echo "passed";
+				echo "<div id=\"passedmsg\">Vous êtes bien enregistré</div>";
 			} catch(Exception $e){echo "erreur signup: ".($e->getMessage());die();}
 		} else  {
 			echo "<div id=\"errormsg\">Ce nom d'utilisateur existe deja !</div>";
@@ -65,7 +65,7 @@ class Account {
 		{
 				$_SESSION ['login'] = true;
 				$_SESSION ['name'] = $name;
-				echo "success";
+				echo "<div id=\"passedmsg\">Vous êtes bien connecté</div>";
 		} else {
 			echo "<div id=\"errormsg\">Vous avez entré de mauvais identifiants !</div>";
 		}
