@@ -424,7 +424,7 @@ a.close {
   transition: .2s ease;
 }
 a.close:hover {
-  transform: scale(1.1);
+  transform: scale(1.5);
 }
 a.closeimg {
   top: 100px;
@@ -433,6 +433,12 @@ a.closeimg {
 }
 .fullinput {
   width: 100% !important;
+}
+.grid-item > img {
+  transition: .2s ease;
+}
+.grid-item:hover > img {
+  transform: scale(1.1);
 }
 /* Usable */
 .firebrickbg {
