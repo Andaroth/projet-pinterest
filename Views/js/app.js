@@ -9,6 +9,18 @@ $(document).ready(function() {
     }
   });*/
   
+  $("#calltoconnect").click(function(e) {
+    e.preventDefault();
+    $("#home").toggleClass("hidden");
+    $("#registermodal").toggleClass("hidden");
+  });
+  
+  $("#calltoclose").click(function(e) {
+    e.preventDefault();
+    $("#home").removeClass("hidden");
+    $("#registermodal").addClass("hidden");
+  });
+  
   $("#profilicon").click(function(e) {
     e.preventDefault();
     $("#usermenu").toggleClass("hidden");

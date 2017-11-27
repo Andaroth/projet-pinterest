@@ -247,7 +247,15 @@ a.searchclic:hover {
 }
 /*modal*/
 .modal {
-      
+  background: grey;
+  height: 100%;
+  display: block;
+  margin: 0 20px;
+  
+  display: flex;
+}
+.modal-content {
+  margin: auto; 
 }
 .modalphoto {
   display: block;
@@ -364,4 +372,7 @@ a.searchclic:hover {
   display: block;
   margin: 0 auto;
   text-transform: uppercase;
+}
+a.close {
+  float: right;
 }

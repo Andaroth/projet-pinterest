@@ -1,6 +1,6 @@
-<div class="modal">
+<div id="registermodal" class="modal hidden">
     <div class="modal-content">
-      <span class="close">&times;</span>
+      <a id="calltoclose" class="close" href="#">&times;</a>
       <div class="logo">
         <img src="Views/img/Pinto.svg" alt="logo">
       </div>
