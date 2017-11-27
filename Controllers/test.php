@@ -1,49 +1,72 @@
 <?php
-$dbhost = "localhost"; //chemin vers le serveur
-$dbname = "projet_pinterest"; //nom de la base de données
-$dbuser = "root_pinterest"; // nom utilisateur pour se connecter
-$dbpass = "pinterest";
-
-class register {
-
-  public function __construct() {
+  $_FILES['nom']['name']     //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
+  $_FILES['nom']['size']     //La taille du fichier en octets.
+  $_FILES['nom']['tmp_name'] //L'adresse vers le fichier uploadé dans le répertoire temporaire.
+  $_FILES['nom']['error']    //Le code d'erreur, qui permet de savoir si le fichier a bien été uploadé.
+  $_FILES['nom']['type']
 
 
-    try {
-      $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname.';charset=utf8',$dbuser,$dbpass);
-      $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    }
-    catch(Exception $e) {
-      die('Erreur : '.$e->getMessage());
-    }
+  if (!empty($_FILES)) {
+      $img = $_FILES['img'];
+      echo strtolower(substr($img['name'], -3));
+      $allow_ext = array ("jpg", "png", "gif");
+      if(in_array($ext, $allow_ext)){
+      move_uploaded_file($img["tmp_name"], "./upload/".$img['name']);
+  } else {
+    $erreur = "Votre fichier n'est pas une image"
   }
 
-  public function add($name, $mail, $pass) {
-    $req = this->bdd->prepare("INSERT INTO users(name, mail, pass) VALUES(?,?,?)");
-    $req ->execute([$name, $mail, $pass]);
+  //taille du fichier
+  $taille_maxi = 100000;
+  $taille = filesize($_FILES["name"]["tmp_name"]);
+  if($taille>$taille_maxi) {
+    $erreur = "Le fichier est trop gros...";
   }
+
+ ?>
+ <?php
+if (isset($erreur)) {
+  echo $erreur;
 }
+  ?>
+
+<form class="upload" action=".?page=test.php" method="post" enctype="multipart/form-data">
+  Titre :<input type="text" name="title"><br/>
+  Votre description :<textarea type="description" name="texte"></textarea><br/>
+  <input type="hidden" name="MAX_FILE_SIZE" value="100000">
+  Votre image :<input type="file" name="nom" value="Parcourir"><br/>
+  <input type="submit" name="submit" value="Envoyer">
+</form>
 
 
+<!-- // $dbhost = "localhost"; //chemin vers le serveur
+// $dbname = "projet_pinterest"; //nom de la base de données
+// $dbuser = "root_pinterest"; // nom utilisateur pour se connecter
+// $dbpass = "pinterest";
+//
+// class register {
+//
+//   public function __construct() {
+//
+//
+//     try {
+//       $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname.';charset=utf8',$dbuser,$dbpass);
+//       $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//
+//     }
+//     catch(Exception $e) {
+//       die('Erreur : '.$e->getMessage());
+//     }
+//   }
+//
+//   public function add($name, $mail, $pass) {
+//     $req = this->bdd->prepare("INSERT INTO users(name, mail, pass) VALUES(?,?,?)");
+//     $req ->execute([$name, $mail, $pass]);
+
+ -->
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<!--
   // $connect = mysql_connect("localhost/projet-pinterest", "name", "mail", "pass")
   //   if (!=$connect) {
   //     die("Impossible de se connecter : " .mysql_error());
@@ -309,8 +332,8 @@ class register {
       }
  ?>
  <form class="formulaire" action="index.php?action=class.php" method="post">
-   <!-- <h1>Connecte toi</h1> -->
-    <label for="username">Veuillez indiquer votre Pseudo ou votre adresse email </label>
+   <!<h1>Connecte toi</h1> -->
+    <!-- <label for="username">Veuillez indiquer votre Pseudo ou votre adresse email </label>
     <input type="text" name="username" id="username" placeholder="Votre pseudo ou email"><br/>
 
     <label for="mdp">Veuillez indiquer votre mot de passe</label>
@@ -318,4 +341,4 @@ class register {
 
     <input type="submit" name="button" value="Se Connecter">
 
- </form>
+ </form> -->
