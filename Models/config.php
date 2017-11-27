@@ -16,9 +16,12 @@
 	catch(Exception $e) {
 	  die('Erreur PDO : '.$e->getMessage());
 	}
-
   ini_set('display_errors', 1);
   ini_set('display_startup_errors', 1);
   error_reporting(E_ALL);
-
+   echo 'bonjour';
+	$select = 'SELECT * FROM users';
+	foreach ($bdd->query($select) as $donnee){
+		var_dump($donnee);
+	}
 ?>
