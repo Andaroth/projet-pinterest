@@ -5,7 +5,6 @@ if(!empty($_FILES)){
   $allow_ext : array("jpg","png","gif");
   if (in_array($ext,$allow_ext)){
     move_uploaded_file($img['tmp_name'], "upload/".$img['name']);
-    Img::creerMin("images/".$img["name"],"images/min",$img["name"],215,112);
   } else {
     $error = "votre fichier n'est pas une image";
   }
@@ -20,3 +19,17 @@ if(isset($error)){
 <input type="file" name="img"/>
 <input type="submit" name="envoyer"/>
 </form>
+
+<?php
+$dos = "upload";
+$dir = opendir($dos);
+while($file = readdir($dir)){
+  $allow_ext = array("jpg","png","gif");
+  $ext = strtolower(substr($img['name'],-3));
+  if(in_array($ext,$allow_ext)){
+    ?>
+    <img src="images/<?php echo $file; ?>"/>
+    <?php
+  }
+}
+ ?>
