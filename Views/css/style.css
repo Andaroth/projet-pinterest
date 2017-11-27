@@ -305,7 +305,7 @@ a.searchclic:hover {
 .modal-content{
   width: 60%;
   display: block;
-  background: rgba(255,255,255,.7);
+  background: rgba(255,255,255,.9);
   border-radius: 5px;
   /*margin: 0 auto;*/
 }
@@ -325,7 +325,7 @@ a.searchclic:hover {
   width: 45%;
   display: block;
   float: left;
-  margin-left: 10px;
+  margin-left: 20px;
   font-size: 12px;
 }
 .signin h3,.signup h3{
@@ -425,6 +425,11 @@ a.close {
 }
 a.close:hover {
   transform: scale(1.1);
+}
+a.closeimg {
+  top: 100px;
+  position: fixed;
+  right: 40px;
 }
 .fullinput {
   width: 100% !important;
