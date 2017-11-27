@@ -8,12 +8,19 @@ class Account {
 		// extract($_GET);
 		switch($_GET["action"]) {
 			case 'register':
-				if () {
+				if (filter_var($mail, FILTER_VALIDATE_EMAIL) AND ($pass==$pass2)){
 					$name = $_POST['name'];
 					$mail = $_POST['mail'];
 					$pass = $_POST['pass'];
+					$pass2 = $_POST['pass2'];
 					$pass = hash("sha256", htmlentities($_POST['pass']) ); // hash le password
 					$this->Signup($name,$mail,$pass);
+				} else if ((empty($mail)) OR (empty($name)) OR (empty($pass))){
+					echo "Remplissez les champs d'inscription.";
+				} else if ($pass!=$pass2){
+					echo "Les mots de passe ne correspondent pas.";
+				} else {
+					echo "Il manque des informations.";
 				}
 				break;
 			case 'login':
