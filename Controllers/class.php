@@ -1,38 +1,45 @@
 <?php
 
-class account{
+class Account {
 	// global $bdd;
 
 	public function __construct() {
 		// extract($_POST);
 		// extract($_GET);
-		if (  (isset($_POST["name"])) &&
-					(isset($_POST["mail"])) &&
-					(isset($_POST["pass"]))
-				)
-		{
-			$name = $_POST['name'];
-			$mail = $_POST['mail'];
-			$pass = $_POST['pass'];
-			$pass = hash("sha256", htmlentities($_POST['pass']) ); // hash le password
-			echo "passed";
-			$this->Signup($name,$mail,$pass);
-		} else { echo "not set"; }
-	}
+		switch($_GET["action"]) {
+			case 'register':
+				if () {
+					$name = $_POST['name'];
+					$mail = $_POST['mail'];
+					$pass = $_POST['pass'];
+					$pass = hash("sha256", htmlentities($_POST['pass']) ); // hash le password
+					$this->Signup($name,$mail,$pass);
+				}
+				break;
+			case 'login':
+				$name = $_POST["username"];
+				$pass = hash("sha256", htmlentities($_POST['mdp']) );
+				$this->Login($name,$pass);
+				break;
+			default: break;
+			// $this->$bdd = new PDO('pgsql:host='.$dbhost.';dbname='.$dbname,$dbuser,$dbpass);
+		} // switch end
+	} // contruct end
 
 	private function Signup($name, $mail, $pass)
 	{
 		global $bdd;
-		$req = $bdd->exec("SELECT * FROM users WHERE name = '".$name."'");
-		if(($req->rowCount()) > 0) {
-			return false;
-		} else {
+		$req = $bdd->query("SELECT COUNT(*) FROM users WHERE name = '".$name."'");
+		$row = $req->fetch();
+		$test = $row['count'];
+		if($test == 0) {
 			try {
-				$bdd->exec("INSERT INTO users (name, mail, pass) VALUES (".$name.",".$mail.",".$pass.")");
-				return true;
+				$bdd->exec("INSERT INTO users (name, mail, pass) VALUES ('".$name."','".$mail."','".$pass."')");
+				echo "passed";
 			} catch(Exception $e){echo "erreur signup: ".($e->getMessage());die();}
-
-		} // else end
+		} else  {
+			echo "existe deja";
+		} // if end
 	} // func signup end
 
 	//$call = new __construct(); //je sais pas trop comment on appelle la fnc construct mais j'pense que c'est ça qui bug..
@@ -40,17 +47,16 @@ class account{
 	private function Login($name, $pass)
 	{
 		global $bdd;
-		$req = $bdd->exec("SELECT * FROM users WHERE name = '".$name."' AND pass ='".$pass."'");
-		$user_bdd= $req->fetch();
-
-		if($req->rowCount()==1)
+		$req = $bdd->query("SELECT COUNT(*) FROM users WHERE name = '".$name."' AND pass ='".$pass."'");
+		$row = $req->fetch();
+		$test = $row['count'];
+		if($test==1)
 		{
 				$_SESSION ['login'] = true;
-				$_SESSION ['name'] = $user_bdd['name'];
-				$_SESSION ['pass'] = $user_bdd['pass'];
-				return true;
+				$_SESSION ['name'] = $name;
+				echo "success";
 		} else {
-			return false;
+			echo "mauvais identifiants";
 		}
 
 	}
