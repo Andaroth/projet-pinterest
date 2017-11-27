@@ -19,7 +19,6 @@ if(isset($error)){
 <input type="file" name="img"/>
 <input type="submit" name="envoyer"/>
 </form>
-
 <?php
 $dos = "upload";
 $dir = opendir($dos);
