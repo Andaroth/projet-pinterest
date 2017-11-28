@@ -65,14 +65,18 @@ class Image {
       $file = $_FILES["fileToUpload"];
       var_dump($file);
       $this->uploadImg($file);
-    } else { echo "<div id=\"errormsg\">Vous devez fournir une image !</div>"; } // if image uploaded end
+    } elseif (true) {
+			echo "aaaaa";
+		}
 	} // construct end
   private function uploadImg($file) {
     global $bdd;
-    if (isset( $_POST["fileTitle"] )) {
-      $fileTitle = htmlspecialchars($_POST["fileTitle"]);
-      $fileDescr = (isset($_POST["description"])) ? htmlspecialchars($_POST["description"]) : "";
-    } else { echo "<div id=\"errormsg\">Vous devez renseigner un titre !</div>"; die(); }
+    // if (isset( $_POST["fileTitle"] )) {
+    //   $fileTitle = htmlspecialchars($_POST["fileTitle"]);
+    //   $fileDescr = (isset($_POST["description"])) ? htmlspecialchars($_POST["description"]) : "";
+    // } else { echo "<div id=\"errormsg\">Vous devez renseigner un titre !</div>"; die(); }
+		$fileTitle = (isset($_POST["fileTitle"])) ? htmlspecialchars($_POST["fileTitle"]) : "Mon image";
+		$fileDescr = (isset($_POST["description"])) ? htmlspecialchars($_POST["description"]) : "";
     $fileTmp = $file["tmp_name"];
     $fileName = htmlspecialchars($file["name"]);
     $filetype = $file["type"];
@@ -82,20 +86,31 @@ class Image {
       echo "<br>url : ".$fileUrl;
       if (file_exists(UP.$fileName)) {
         echo "<div id=\"errormsg\">Un fichier de ce nom existe déjà !</div>";
-      } else 
+      } else
       {
         try {
           $bdd->exec("INSERT INTO img (url, title, description) VALUES ('".$fileUrl."','".$fileTitle."','".$fileDescr."')");
         } catch(Exception $e){echo "erreur uploadimg: ".($e->getMessage());die();}
-        move_uploaded_file($file['tmp_name'], UP.$fileName); 
+        move_uploaded_file($file['tmp_name'], UP.$fileName);
         echo '<img src="'.UP.$fileName.'" alt="preview" />';
         echo "<div id=\"passedmsg\">Votre fichier est uploadé !</div>";
-        //Img::creerMin("images/".$img["name"],"images/min",$img["name"],215,112); 
+        //Img::creerMin("images/".$img["name"],"images/min",$img["name"],215,112);
       }
-    } else { 
-      echo "<div id=\"errormsg\">votre fichier n'est pas une image :(</div>"; 
+    } else {
+      echo "<div id=\"errormsg\">votre fichier n'est pas une image :(</div>";
     }
   }
+ 	public function getAllImg() {
+		global $bdd;
+		$req = $bdd->query("SELECT * FROM img LIMIT 100");
+		foreach ($req as $thisQuery) { ?>
+			<a class="grid-item" href="#<?= $thisQuery["id"] ?>">
+	      <img src="<?= $thisQuery["url"] ?>" alt="road">
+	      <h2 class="imagetitle hidden"><?= $thisQuery["title"] ?></h2>
+	      <p class="imagedescr hidden"><?= $thisQuery["description"] ?></p>
+	    </a>
+		<?php }
+	}
 	private function getImgData($imageid,$data) {
 		return $bdd->query('SELECT '.$data.' FROM img WHERE id ="'.$imageid.'"');
 	} // getImgData end
@@ -103,7 +118,7 @@ class Image {
 
 	} // getImgCat end
   private function delImg($imageid) {
-    
+
   }
 } // class LoadImage end
 
