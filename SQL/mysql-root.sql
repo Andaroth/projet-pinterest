@@ -1,7 +1,7 @@
 --
--- Ce fichier sert à créer un utilisateur 
+-- Ce fichier sert à créer un utilisateur
 -- root_admin pour la DB pinterest.
--- 
+--
 -- Vous devrez définir le mot de passe manuellement
 --
 
