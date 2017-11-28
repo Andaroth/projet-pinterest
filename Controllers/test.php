@@ -1,49 +1,33 @@
-<?php
-$dbhost = "localhost"; //chemin vers le serveur
-$dbname = "projet_pinterest"; //nom de la base de données
-$dbuser = "root_pinterest"; // nom utilisateur pour se connecter
-$dbpass = "pinterest";
-
-class register {
-
-  public function __construct() {
 
 
-    try {
-      $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname.';charset=utf8',$dbuser,$dbpass);
-      $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+<!-- // $dbhost = "localhost"; //chemin vers le serveur
+// $dbname = "projet_pinterest"; //nom de la base de données
+// $dbuser = "root_pinterest"; // nom utilisateur pour se connecter
+// $dbpass = "pinterest";
+//
+// class register {
+//
+//   public function __construct() {
+//
+//
+//     try {
+//       $bdd = new PDO('mysql:host='.$dbhost.';dbname='.$dbname.';charset=utf8',$dbuser,$dbpass);
+//       $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+//
+//     }
+//     catch(Exception $e) {
+//       die('Erreur : '.$e->getMessage());
+//     }
+//   }
+//
+//   public function add($name, $mail, $pass) {
+//     $req = this->bdd->prepare("INSERT INTO users(name, mail, pass) VALUES(?,?,?)");
+//     $req ->execute([$name, $mail, $pass]);
 
-    }
-    catch(Exception $e) {
-      die('Erreur : '.$e->getMessage());
-    }
-  }
-
-  public function add($name, $mail, $pass) {
-    $req = this->bdd->prepare("INSERT INTO users(name, mail, pass) VALUES(?,?,?)");
-    $req ->execute([$name, $mail, $pass]);
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-
+ -->
 
 
-
-
-
-
-
-
+<!--
   // $connect = mysql_connect("localhost/projet-pinterest", "name", "mail", "pass")
   //   if (!=$connect) {
   //     die("Impossible de se connecter : " .mysql_error());
@@ -309,8 +293,8 @@ class register {
       }
  ?>
  <form class="formulaire" action="index.php?action=class.php" method="post">
-   <!-- <h1>Connecte toi</h1> -->
-    <label for="username">Veuillez indiquer votre Pseudo ou votre adresse email </label>
+   <!<h1>Connecte toi</h1> -->
+    <!-- <label for="username">Veuillez indiquer votre Pseudo ou votre adresse email </label>
     <input type="text" name="username" id="username" placeholder="Votre pseudo ou email"><br/>
 
     <label for="mdp">Veuillez indiquer votre mot de passe</label>
@@ -318,4 +302,4 @@ class register {
 
     <input type="submit" name="button" value="Se Connecter">
 
- </form>
+ </form> -->

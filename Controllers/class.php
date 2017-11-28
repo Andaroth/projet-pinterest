@@ -8,11 +8,11 @@ class Account {
 		// extract($_GET);
 		switch($_GET["action"]) {
 			case 'register':
-				$name = $_POST['name'];
-				$mail = $_POST['mail'];
-				$pass = $_POST['pass'];
-				$pass = hash("sha256", htmlentities($_POST['pass']) ); // hash le password
-				$this->Signup($name,$mail,$pass);
+					$name = $_POST['name'];
+					$mail = $_POST['mail'];
+					$pass = $_POST['pass'];
+					$pass = hash("sha256", htmlentities($_POST['pass']) ); // hash le password
+					$this->Signup($name,$mail,$pass);
 				break;
 			case 'login':
 				$name = $_POST["username"];
@@ -58,21 +58,53 @@ class Account {
 	}
 } // class Register end
 
-class LoadImage {
-	function __construct() {
-		$imageid = isset($_GET["img"]) ? $_GET["img"] : false ;
-		if ($imageid) {
-			$imgurl = getImgData($imageid,"url");
-			echo "a:".$imgurl;
-		}// if $imageid end
+class Image {
+	public function __construct() {
+		// $imageid = isset($_GET["img"]) ? $_GET["img"] : false ;
+		if(isset($_FILES["fileToUpload"]['tmp_name'])){
+      $file = $_FILES["fileToUpload"];
+      var_dump($file);
+      $this->uploadImg($file);
+    } else { echo "<div id=\"errormsg\">Vous devez fournir une image !</div>"; } // if image uploaded end
 	} // construct end
+  private function uploadImg($file) {
+    global $bdd;
+    if (isset( $_POST["fileTitle"] )) {
+      $fileTitle = htmlspecialchars($_POST["fileTitle"]);
+      $fileDescr = (isset($_POST["description"])) ? htmlspecialchars($_POST["description"]) : "";
+    } else { echo "<div id=\"errormsg\">Vous devez renseigner un titre !</div>"; die(); }
+    $fileTmp = $file["tmp_name"];
+    $fileName = htmlspecialchars($file["name"]);
+    $filetype = $file["type"];
+    $allow_ext = array("image/jpeg","image/png","image/gif");
+    if (in_array($filetype,$allow_ext)){
+      $fileUrl = UP.$fileName;
+      echo "<br>url : ".$fileUrl;
+      if (file_exists(UP.$fileName)) {
+        echo "<div id=\"errormsg\">Un fichier de ce nom existe déjà !</div>";
+      } else 
+      {
+        try {
+          $bdd->exec("INSERT INTO img (url, title, description) VALUES ('".$fileUrl."','".$fileTitle."','".$fileDescr."')");
+        } catch(Exception $e){echo "erreur uploadimg: ".($e->getMessage());die();}
+        move_uploaded_file($file['tmp_name'], UP.$fileName); 
+        echo '<img src="'.UP.$fileName.'" alt="preview" />';
+        echo "<div id=\"passedmsg\">Votre fichier est uploadé !</div>";
+        //Img::creerMin("images/".$img["name"],"images/min",$img["name"],215,112); 
+      }
+    } else { 
+      echo "<div id=\"errormsg\">votre fichier n'est pas une image :(</div>"; 
+    }
+  }
 	private function getImgData($imageid,$data) {
-		return "get";
-		// return $bdd->exec('SELECT '.$data.' FROM img WHERE id ="'.$imageid.'"');
+		return $bdd->query('SELECT '.$data.' FROM img WHERE id ="'.$imageid.'"');
 	} // getImgData end
 	private function getImgCat($imageid) {
 
 	} // getImgCat end
+  private function delImg($imageid) {
+    
+  }
 } // class LoadImage end
 
 
