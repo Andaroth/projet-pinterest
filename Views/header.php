@@ -3,7 +3,7 @@
     <div class="flright">
       <div class="searchbox">
         <form id="searchform" class="searchform" action="./" method="get">
-          <input type="text" id="searchbar" class="searchbar" value="Faire une recherche..." /><input type="button" id="opencat" class="opencat" value="&equiv;"/ ><input type="submit" class="searchclic" value="&#128269" />
+          <input type="text" id="searchbar" class="searchbar" value="Faire une recherche..." /><input type="button" id="opencat" class="opencat" value="&equiv;" /><input type="submit" class="searchclic" value="&#128269;" />
         </form>
         <div id="catlist" class="catlist hidden">
           <ul>
