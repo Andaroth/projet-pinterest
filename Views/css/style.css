@@ -72,22 +72,22 @@ a.profilicon {
 a.profilicon:hover {
   border-bottom: 2px solid firebrick;
 }
-a.searchclic {
+input[type=submit].searchclic {
   line-height: 40px;
   text-align: center;
-  display: block;
+  display: inline-block;
   height: 40px;
   width: 40px;
   border: 1px solid grey;
   box-sizing: border-box;
-  margin: 0 10px;
+  margin: 0 0;
   margin-left: 0;
   border-radius: 0 3px 3px 0;
   text-decoration: none;
   color: black;
   transition: .2s ease;
 }
-a.searchclic:hover {
+input[type=submit].searchclic:hover {
   background: firebrick;
   border-color: firebrick;
 }
@@ -116,18 +116,24 @@ a.searchclic:hover {
   color: black;
   outline: 0;
 }
-.opencat {
-  background: grey;
-  width: 40px;
-  height: 40px;
-  text-align: center;
+input.opencat {
   line-height: 40px;
-  color: white;
+  text-align: center;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border: 0;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  box-sizing: border-box;
+  margin: 0;
+  margin-left: 0;
   text-decoration: none;
-  font-size: 2em;
+  color: black;
 }
-.opencat:hover {
+input.opencat:hover {
   background: firebrick;
+  cursor: pointer;
 }
 .catlist {
   grid-template-columns: 140px 140px 140px;

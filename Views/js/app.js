@@ -21,8 +21,8 @@ $(document).ready(function() {
     
     var imgurl = $(this).children("img").prop("src");
     console.log(imgurl);
-    var descr = $(this).children("p").text();
-    var title = $(this).children("h2").text();
+    var title = $(this).children("p.imagetitle").text();
+    var descr = $(this).children("p.imagedescr").text();
    
     $("#onepic").children("img").attr("src", imgurl);
     $("#onepic").children("h2").text(title);

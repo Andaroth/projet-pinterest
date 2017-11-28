@@ -1,5 +1,5 @@
 <div id="container">
-    <a id="calltoclose" class="close" href="#">&times;</a>
+    <a class="close calltoclose" href="#">&times;</a>
   <div class="titre">
     <h3>Une nouvelle image?</h3>
   </div>
