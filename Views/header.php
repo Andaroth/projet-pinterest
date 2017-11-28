@@ -10,7 +10,7 @@
         <a class="searchclic" href="#">&#128269;<!--&cudarrr;--><span class="hidden">Rechercher</span></a>
       </div>
       <a id="profilicon" class="profilicon" href="#">&#128126;<span class="hidden">Votre profil</span></a>
-      <a href="#" class="calltoaction">Se connecter</a>
+      <a href="#" id="calltoconnect" class="calltoaction">Se connecter</a>
     </div>
     <?php include V."usermenu.php"; ?>
   </nav>

@@ -1,3 +1,15 @@
+@keyframes vanish {
+  0% { transform: translateX(5px); }
+  1% { transform: translateX(-5px); }
+  2% { transform: translateX(5px); }
+  3% { transform: translateX(-5px); }
+  4% { transform: translateX(5px); }
+  5% { transform: translateX(-5px); }
+  6% { transform: translateX(5px); }
+  7% { transform: translateX(0); }
+  50% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); }
+}
 body {
   margin: 0;
   padding-top: 80px;
@@ -9,7 +21,7 @@ body {
   padding-bottom: 20px;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: Nunito;
+  font-family: "Nunito";
 }
 .topbar {
   position: fixed;
@@ -130,6 +142,7 @@ a.searchclic:hover {
   box-sizing: border-box;
   border-top: 5px solid firebrick;
   transition: opacity 1s ease;
+  border-radius: 0 0 5px 5px;
 }
 .catlist ul {
   float: left;
@@ -234,19 +247,18 @@ a.searchclic:hover {
 .grid-item img{
   width: 100%;
 }
-/* Usable */
-.hidden {
-  display: none;
-}
-.firebrickbg {
-  background-color: firebrick !important;
-}
-.firebrickborder {
-  border-color: firebrick;
-}
+
 /*modal*/
 .modal {
-      
+  /*background: grey;*/
+  height: 100%;
+  display: block;
+  margin: 0 20px;
+
+  display: flex;
+}
+.modal-content {
+  margin: auto;
 }
 .modalphoto {
   display: block;
@@ -293,7 +305,9 @@ a.searchclic:hover {
 .modal-content{
   width: 60%;
   display: block;
-  margin: 0 auto;
+  background: rgba(255,255,255,.9);
+  border-radius: 5px;
+  /*margin: 0 auto;*/
 }
 .modal-content span{
   display: block;
@@ -305,12 +319,13 @@ a.searchclic:hover {
   display: block;
   float: left;
   font-size: 12px;
+  margin-left: 15Px;
 }
 .signup{
   width: 45%;
   display: block;
   float: left;
-  margin-left: 60px;
+  margin-left: 20px;
   font-size: 12px;
 }
 .signin h3,.signup h3{
@@ -318,16 +333,13 @@ a.searchclic:hover {
   text-align: center;
 }
 .form1 form input[type=text],.form1 form input[type="password"]{
-  width: 100%;
+  width: 49%;
   padding: 12px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   box-sizing: border-box;
   resize: vertical;
-}
-.form1 form input[type="password"]{
-  margin-bottom: 20px;
 }
 .form1 form input[type=submit] {
   background-color: black;
@@ -341,7 +353,7 @@ a.searchclic:hover {
   text-transform: uppercase;
 }
 .form2 form input[type=text],.form2 form input[type="password"]{
-  width: 100%;
+  width: 49%;
   padding: 12px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -349,11 +361,11 @@ a.searchclic:hover {
   box-sizing: border-box;
   resize: vertical;
 }
-.form2 form input[type="password"]{
-  margin-bottom: 87px;
+.inputleft {
+  margin-right: 2%;
 }
 .form2 form input[type=submit] {
-  width: 68px;
+  width: auto;
   background-color: black;
   color: white;
   padding: 12px 10px;
@@ -363,4 +375,176 @@ a.searchclic:hover {
   display: block;
   margin: 0 auto;
   text-transform: uppercase;
+}
+form input[type=submit]:hover {
+  background: firebrick;
+}
+#errormsg, #passedmsg {
+  background: firebrick;
+  display: block;
+  position: absolute;
+  padding: 10px;
+  border-radius: 5px;
+  position: fixed;
+  top: 20px;
+  left: 100px;
+  transition: 1s ease;
+  z-index: 999;
+  color: white;
+  animation: 8s vanish forwards;
+}
+#passedmsg {
+  background: green;
+}
+#registermodal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#registermodal .modal-content {
+  width: 500px;
+  padding: 50px 10px;
+}
+/* close btn */
+a.close {
+  background: firebrick;
+  text-decoration: none;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  float: right;
+  top: -40px;
+  font-size: 1.2em;
+  transition: .2s ease;
+}
+a.close:hover {
+  transform: scale(1.5);
+}
+a.closeimg {
+  top: 100px;
+  position: fixed;
+  right: 40px;
+}
+.fullinput {
+  width: 100% !important;
+}
+.grid-item > img {
+  transition: .2s ease;
+}
+.grid-item:hover > img {
+  transform: scale(1.1);
+}
+/* Usable */
+.firebrickbg {
+  background-color: firebrick !important;
+}
+.firebrickborder {
+  border-color: firebrick;
+}
+.hidden {
+  display: none;
+}
+/*Upload Form*/
+#container{
+  width: 60%;
+  border: 1px solid black;
+  border-radius: 4px;
+  display: block;
+  margin: 0 auto;
+  opacity: 0.8;
+}
+#container a{
+  display: block;
+  float: right;
+  margin-right: 10px;
+  color: black;
+}
+#upload_img{
+  font-family:'Nunito';
+  font-size: 14px;
+  line-height: 30px;
+  font-weight:800;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
+  padding: 20px;
+}
+.titre {
+  width: 60%;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+
+}
+.titre h3{
+  font-family: 'Nunito';
+  font-size: 20px;
+}
+/*Upload de l'image*/
+.new_img{
+  width: 40%;
+}
+.new_img form{
+  padding: 12px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.img_upload label {
+  width: 100%;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  display: block;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%)
+}
+.img_upload input {
+    display: none;
+}
+input[type="submit"]{
+  display: block;
+  margin: 0 auto;
+}
+.img_upload{
+  border-radius: 3px;
+  border: 1px solid black;
+  width: 200px;
+  height: 300px;
+  padding: 10px;
+  margin-bottom: 15px;
+}
+/*Titre, description et catégorie*/
+.description{
+  width: 45%;
+  margin-top: 12px;
+}
+.description input, .description textarea{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.description textarea{
+  width: 100%;
+  margin-bottom: 15px;
+}
+.description label{
+  margin-left: 40px;
+  text-align: left;
+}
+.checkbox input, .checkbox label{
+  float:left;
+  clear: both;
+  line-height: normal;
+}
+.item, .item1, .item2, .item3,.item4{
+  display: flex;
 }
