@@ -1,12 +1,14 @@
 <div id="upload_img">
-  <form action="./?page=upload" method="post" enctype="multipart/form-data">
     <div class="new_img">
-      Une nouvelle image?  <br>
-    <input type="file" name="fileToUpload" id="fileToUpload"> <br>
+    <form action="./?page=upload" method="post" enctype="multipart/form-data">
+      Une nouvelle image?<br>
     <div class="img_upload">
+      <label for="file" class="label-file">Choisir une image</label>
+      <input id="file" class="input-file" type="file">
+    </div>
+    <input type="submit" value="Upload Image" name="submit"><br>
     </div>
     <div class="description">
-    <input type="submit" value="Upload Image" name="submit"><br>
     Titre <br>
     <input type="text" name="title"><br>
     Description<br>
@@ -26,39 +28,43 @@
 <style media="screen">
 
 #upload_img{
-  width: 70%;
+  width: 40%;
   font-family: 'Nunito';
   font-size: 14px;
-  line-height: 30px;
+  line-height: 20px;
   font-weight:800;
-  display: flex;
-  flex-wrap: wrap;
-}
-.new_img form{
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  justify-content: space-between;
+}
+.new_img{
+  width: 40%;
+}
+.new_img form{
+  padding: 12px;
+  margin-bottom: 10px;
   box-sizing: border-box;
   resize: vertical;
 }
 .new_img form input{
-  width:70%;
   border-radius: 2px solid black;
+  padding-top: 60%;
 }
 .new_img form textarea{
-  width:70%;
+
 }
-.submit{
-  width: 30%;
-}
-.submit input{
-  height: 20px;
-  background-color: black;
-  color: #FFFFFF;
+.img_upload{
+  border-radius: 3px;
+  border: 1px solid black;
+  width: 200px;
+  height: 300px;
+  padding: 20px;
+  margin-bottom: 10px;
 }
 .description{
-
+  width: 40%;
 }
 </style>
