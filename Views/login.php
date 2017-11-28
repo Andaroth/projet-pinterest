@@ -6,5 +6,4 @@
    <input class="fullinput" type="password" name="mdp" id="mdp" placeholder="Votre mot de passe">
 
    <input type="submit" name="button" value="Se Connecter">
-
 </form>
