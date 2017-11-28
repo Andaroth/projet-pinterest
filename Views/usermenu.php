@@ -1,3 +1,6 @@
 <ul id="usermenu" class="usermenu hidden">
-          <li><a><?= "Déconnexion" ?></a></li>
-        </ul>
+    <li><a href="#">Profil</a></li>
+    <li><a href="#">Mes images</a></li>
+    <?="<li><a href=\"#\">Déconnexion </a></li>"?>
+  </ul>
+        

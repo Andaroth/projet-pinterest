@@ -1,3 +1,15 @@
+@keyframes vanish {
+  0% { transform: translateX(5px); }
+  1% { transform: translateX(-5px); }
+  2% { transform: translateX(5px); }
+  3% { transform: translateX(-5px); }
+  4% { transform: translateX(5px); }
+  5% { transform: translateX(-5px); }
+  6% { transform: translateX(5px); }
+  7% { transform: translateX(0); }
+  50% { transform: translateY(0); }
+  100% { transform: translateY(-100vh); }
+}
 body {
   margin: 0;
   padding-top: 80px;
@@ -21,6 +33,19 @@ h1, h2, h3, h4, h5, h6 {
   height: 80px;
   box-sizing: border-box;
   z-index: 50;
+}
+#sitelogo {
+  height: 100%;
+}
+a.sitelogo {
+  display: block;
+  height: 80px;
+  width: 80px;
+  transition: .2s ease-out;
+}
+a.sitelogo:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 .flright {
   position: absolute;
@@ -117,6 +142,7 @@ a.searchclic:hover {
   box-sizing: border-box;
   border-top: 5px solid firebrick;
   transition: opacity 1s ease;
+  border-radius: 0 0 5px 5px;
 }
 .catlist ul {
   float: left;
@@ -210,33 +236,206 @@ a.searchclic:hover {
 }
 .grid-item {
   width: 25%;
-  min-width: 150px;
   margin-bottom: -30px;
   overflow: hidden;
 }
 .grid-item a {
   min-width: 100%;
 }
-/* Delphine */
-.grid:after {
-  content: '';
-  display: block;
-  clear: both;
-  background: white;
-  width: 100%;
-  height: 20px;
-}
 
+/* Delphine */
 .grid-item img{
   width: 100%;
 }
-/* Usable */
-.hidden {
-  display: none;
+
+/*modal*/
+.modal {
+  /*background: grey;*/
+  height: 100%;
+  display: block;
+  margin: 0 20px;
+  
+  display: flex;
 }
+.modal-content {
+  margin: auto; 
+}
+.modalphoto {
+  display: block;
+  z-index: 15;
+  background: #2B2B2B;
+  color: white;
+  padding: 100px 50px 30px 50px;
+  box-sizing: border-box;
+  text-align: center;
+  box-sizing: border-box;
+  margin: 0 20px;
+  height: 100%;
+  overflow-y: auto;
+  direction: rtl;
+}
+.modalphoto:before {
+  display: block;
+  content: "";
+  position: fixed;
+  width: 20px;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background: white;
+  z-index: 20;
+}
+.modalphoto img {
+  max-width: 100%;
+  max-height: 50vh;
+}
+.modalphoto > p {
+  max-width: 50%;
+  margin: 20px auto;
+}
+.modalphoto > p:last-child {
+  margin-bottom: 50px;
+}
+.logo{
+  display: block;
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+}
+.modal-content{
+  width: 60%;
+  display: block;
+  background: rgba(255,255,255,.7);
+  border-radius: 5px;
+  /*margin: 0 auto;*/
+}
+.modal-content span{
+  display: block;
+  float: right;
+}
+/* Form signUp et SignIn*/
+.signin {
+  width: 45%;
+  display: block;
+  float: left;
+  font-size: 12px;
+  margin-left: 15Px;
+}
+.signup{
+  width: 45%;
+  display: block;
+  float: left;
+  margin-left: 10px;
+  font-size: 12px;
+}
+.signin h3,.signup h3{
+  font-size: 14px;
+  text-align: center;
+}
+.form1 form input[type=text],.form1 form input[type="password"]{
+  width: 49%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.form1 form input[type=submit] {
+  background-color: black;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+.form2 form input[type=text],.form2 form input[type="password"]{
+  width: 49%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+.inputleft {
+  margin-right: 2%;
+}
+.form2 form input[type=submit] {
+  width: auto;
+  background-color: black;
+  color: white;
+  padding: 12px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+form input[type=submit]:hover {
+  background: firebrick;
+}
+#errormsg, #passedmsg {
+  background: firebrick;
+  display: block;
+  position: absolute;
+  padding: 10px;
+  border-radius: 5px;
+  position: fixed;
+  top: 20px;
+  left: 100px;
+  transition: 1s ease;
+  z-index: 999;
+  color: white;
+  animation: 8s vanish forwards;
+}
+#passedmsg {
+  background: green;
+}
+#registermodal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+#registermodal .modal-content {
+  width: 500px;
+  padding: 50px 10px;
+}
+/* close btn */
+a.close {
+  background: firebrick;
+  text-decoration: none;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  color: white;
+  text-align: center;
+  border-radius: 50%;
+  position: relative;
+  display: block;
+  float: right;
+  top: -40px;
+  font-size: 1.2em;
+  transition: .2s ease;
+}
+a.close:hover {
+  transform: scale(1.1);
+}
+.fullinput {
+  width: 100% !important;
+}
+/* Usable */
 .firebrickbg {
   background-color: firebrick !important;
 }
 .firebrickborder {
   border-color: firebrick;
+}
+.hidden {
+  display: none;
 }
