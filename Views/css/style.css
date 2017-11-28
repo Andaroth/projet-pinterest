@@ -21,7 +21,7 @@ body {
   padding-bottom: 20px;
 }
 h1, h2, h3, h4, h5, h6 {
-  font-family: Nunito;
+  font-family: "Nunito";
 }
 .topbar {
   position: fixed;
@@ -254,11 +254,11 @@ a.searchclic:hover {
   height: 100%;
   display: block;
   margin: 0 20px;
-  
+
   display: flex;
 }
 .modal-content {
-  margin: auto; 
+  margin: auto;
 }
 .modalphoto {
   display: block;
