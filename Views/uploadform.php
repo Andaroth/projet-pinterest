@@ -1,15 +1,12 @@
-<div class="upload_img">
-  <form action="upload.php" method="post" enctype="multipart/form-data">
+<div id="upload_img">
+  <form action="./?page=upload" method="post" enctype="multipart/form-data">
     <div class="new_img">
       Une nouvelle image?  <br>
     <input type="file" name="fileToUpload" id="fileToUpload"> <br>
     <div class="img_upload">
     </div>
-    </div>
     <div class="description">
-    <div class="submit">
     <input type="submit" value="Upload Image" name="submit"><br>
-    </div>
     Titre <br>
     <input type="text" name="title"><br>
     Description<br>
@@ -22,20 +19,22 @@
        <input type="checkbox" name="animaux" id="animaux" /> <label for="animaux">Animaux</label>
        <input type="checkbox" name="desing" id="design" /> <label for="design">Design</label>
       </p>
-   </div>
+  </div>
  </form>
 </div>
 
 <style media="screen">
-.upload_img{
+
+#upload_img{
   width: 70%;
-  margin: 0 auto;
   font-family: 'Nunito';
   font-size: 14px;
   line-height: 30px;
   font-weight:800;
+  display: flex;
+  flex-wrap: wrap;
 }
-.upload_img form{
+.new_img form{
   width: 100%;
   padding: 12px;
   margin-bottom: 10px;
@@ -44,11 +43,11 @@
   box-sizing: border-box;
   resize: vertical;
 }
-.upload_img form input{
+.new_img form input{
   width:70%;
   border-radius: 2px solid black;
 }
-.upload_img form textarea{
+.new_img form textarea{
   width:70%;
 }
 .submit{
@@ -60,7 +59,6 @@
   color: #FFFFFF;
 }
 .description{
-  display: flex;
-  flex-wrap: wrap;
+
 }
 </style>
