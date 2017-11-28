@@ -3,8 +3,6 @@
     $action = new Account;
   }
 
-?>
-<?php
   // $_FILES['nom']['name']     //Le nom original du fichier, comme sur le disque du visiteur (exemple : mon_icone.png).
   // $_FILES['nom']['size']     //La taille du fichier en octets.
   // $_FILES['nom']['tmp_name'] //L'adresse vers le fichier uploadé dans le répertoire temporaire.

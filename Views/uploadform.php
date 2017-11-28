@@ -5,7 +5,7 @@
   </div>
   <div id="upload_img">
     <div class="new_img">
-    <form action="./?page=upload" method="post" enctype="multipart/form-data">
+    <form action="./?page=upimg" method="post" enctype="multipart/form-data">
       <div class="img_upload">
         <img id="imgPreview" src="#" alt="">
         <label for="fileToUpload" class="label-file">Choisir une image</label>
@@ -15,7 +15,7 @@
       </div>
       <div class="description">
         Titre <br>
-        <input type="text" name="fileTill"><br>
+        <input type="text" name="fileTitle"><br>
         Description<br>
         <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
       <div class="checkbox">
