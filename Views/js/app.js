@@ -4,6 +4,16 @@ $(document).ready(function() {
   
   $("#mailinput").attr("value", "votre@mail");
   
+  $("#fileToUpload").change(function(){
+    var files = $(this)[0].files; 
+    if (files.length > 0) {
+      console.log("aaaaa");
+      $(".img_upload").children("label").addClass["hidden"];
+      $(".img_upload").children("input").addClass["hidden"];
+    }
+    // $("#filePreview").attr("src", window.URL.createObjectURL(thisPic));
+  });
+  
   $(".grid-item").click(function(e) {
     e.preventDefault();
     $("#home").addClass("hidden");

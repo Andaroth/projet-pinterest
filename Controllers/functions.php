@@ -35,10 +35,10 @@
 //   echo $erreur;
 // }
   ?>
-<form class="upload" action=".?action=functions.php" method="post" enctype="multipart/form-data">
+<!--<form class="upload" action=".?action=functions.php" method="post" enctype="multipart/form-data">
   Titre :<input type="text" name="title"><br/>
   Votre description :<textarea type="description" name="texte"></textarea><br/>
   <input type="hidden" name="MAX_FILE_SIZE" value="100000">
   Votre image :<input type="file" name="nom" value="Parcourir"><br/>
   <input type="submit" name="submit" value="Envoyer">
-</form>
+</form>-->

@@ -3,14 +3,15 @@
     <form action="./?page=upload" method="post" enctype="multipart/form-data">
       Une nouvelle image?<br>
     <div class="img_upload">
-      <label for="file" class="label-file">Choisir une image</label>
-      <input id="file" class="input-file" type="file">
+      <img id="filePreview" src="#" alt="" id="">
+      <label for="fileToUpload" class="label-file">Choisir une image</label>
+      <input name="fileToUpload" id="fileToUpload" class="input-file" type="file">
     </div>
     <input type="submit" value="Upload Image" name="submit"><br>
     </div>
     <div class="description">
     Titre <br>
-    <input type="text" name="title"><br>
+    <input type="text" name="fileTitle"><br>
     Description<br>
     <textarea name="description" id="description" cols="30" rows="10"></textarea><br>
       <p>
@@ -21,6 +22,7 @@
        <input type="checkbox" name="animaux" id="animaux" /> <label for="animaux">Animaux</label>
        <input type="checkbox" name="desing" id="design" /> <label for="design">Design</label>
       </p>
+    </div>
   </div>
  </form>
 </div>
