@@ -4,6 +4,7 @@ class Image {
     // $imageid = isset($_GET["img"]) ? $_GET["img"] : false ;
     if(isset($_FILES["fileToUpload"]['tmp_name'])){
       $file = $_FILES["fileToUpload"];
+      var_dump($file);
       $this->uploadImg($file);
     } elseif (true) {
         // autres conditions
@@ -23,6 +24,7 @@ class Image {
     $allow_ext = array("image/jpeg","image/png","image/gif");
     if (in_array($filetype,$allow_ext)){
       $fileUrl = UP.$fileName;
+      echo "<br>url : ".$fileUrl;
       if (file_exists(UP.$fileName)) {
         echo "<div id=\"errormsg\">Un fichier de ce nom existe déjà !</div>";
       } else
