@@ -425,7 +425,7 @@ a.close {
   position: relative;
   display: block;
   float: right;
-  top: -55px;
+  top: -40px;
   font-size: 1.2em;
   transition: .2s ease;
 }
@@ -446,6 +446,16 @@ a.closeimg {
 .grid-item:hover > img {
   transform: scale(1.1);
 }
+/* Usable */
+.firebrickbg {
+  background-color: firebrick !important;
+}
+.firebrickborder {
+  border-color: firebrick;
+}
+.hidden {
+  display: none;
+}
 /*Upload Form*/
 #container{
   width: 60%;
@@ -455,15 +465,11 @@ a.closeimg {
   margin: 0 auto;
   opacity: 0.8;
 }
-#container a.close {
-  top: 10px;
-  right: 10px;
-}
-#container form > div {
-  float: left;
-  width: 50%;
-  padding: 0 20px;
-  box-sizing: border-box;
+#container a{
+  display: block;
+  float: right;
+  margin-right: 10px;
+  color: black;
 }
 #upload_img{
   font-family:'Nunito';
@@ -476,19 +482,22 @@ a.closeimg {
   justify-content: space-between;
   padding: 20px;
 }
-#container h3{
+.titre {
   width: 60%;
-  margin: 10px auto;
   text-align: center;
+  display: block;
+  margin: 0 auto;
+  border-bottom: 1px solid black;
+
+}
+.titre h3{
   font-family: 'Nunito';
   font-size: 20px;
-  border-bottom: 1px solid black;
-}
-.errorform {
-  text-align: center;
-  color: firebrick;
 }
 /*Upload de l'image*/
+.new_img{
+  width: 40%;
+}
 .new_img form{
   padding: 12px;
   margin-bottom: 15px;
@@ -520,8 +529,9 @@ input[type="submit"]{
   padding: 10px;
   margin-bottom: 15px;
 }
-/*Titre, description et catégorie*/
+/*Titre, description et catégories*/
 .description{
+  width: 45%;
   margin-top: 12px;
 }
 .description input, .description textarea{
@@ -543,14 +553,4 @@ input[type="submit"]{
 }
 .item, .item1, .item2, .item3,.item4{
   display: flex;
-}
-/* Usable */
-.firebrickbg {
-  background-color: firebrick !important;
-}
-.firebrickborder {
-  border-color: firebrick;
-}
-.hidden {
-  display: none !important;
 }
