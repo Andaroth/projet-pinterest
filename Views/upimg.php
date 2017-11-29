@@ -1,3 +1,0 @@
-<?php
-  $uploading = new Image();
-?>

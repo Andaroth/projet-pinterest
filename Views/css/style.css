@@ -72,22 +72,22 @@ a.profilicon {
 a.profilicon:hover {
   border-bottom: 2px solid firebrick;
 }
-a.searchclic {
+input[type=submit].searchclic {
   line-height: 40px;
   text-align: center;
-  display: block;
+  display: inline-block;
   height: 40px;
   width: 40px;
   border: 1px solid grey;
   box-sizing: border-box;
-  margin: 0 10px;
+  margin: 0 0;
   margin-left: 0;
   border-radius: 0 3px 3px 0;
   text-decoration: none;
   color: black;
   transition: .2s ease;
 }
-a.searchclic:hover {
+input[type=submit].searchclic:hover {
   background: firebrick;
   border-color: firebrick;
 }
@@ -116,18 +116,24 @@ a.searchclic:hover {
   color: black;
   outline: 0;
 }
-.opencat {
-  background: grey;
-  width: 40px;
-  height: 40px;
-  text-align: center;
+input.opencat {
   line-height: 40px;
-  color: white;
+  text-align: center;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  border: 0;
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
+  box-sizing: border-box;
+  margin: 0;
+  margin-left: 0;
   text-decoration: none;
-  font-size: 2em;
+  color: black;
 }
-.opencat:hover {
+input.opencat:hover {
   background: firebrick;
+  cursor: pointer;
 }
 .catlist {
   grid-template-columns: 140px 140px 140px;
@@ -419,7 +425,7 @@ a.close {
   position: relative;
   display: block;
   float: right;
-  top: -40px;
+  top: -55px;
   font-size: 1.2em;
   transition: .2s ease;
 }
@@ -440,16 +446,6 @@ a.closeimg {
 .grid-item:hover > img {
   transform: scale(1.1);
 }
-/* Usable */
-.firebrickbg {
-  background-color: firebrick !important;
-}
-.firebrickborder {
-  border-color: firebrick;
-}
-.hidden {
-  display: none;
-}
 /*Upload Form*/
 #container{
   width: 60%;
@@ -459,11 +455,15 @@ a.closeimg {
   margin: 0 auto;
   opacity: 0.8;
 }
-#container a{
-  display: block;
-  float: right;
-  margin-right: 10px;
-  color: black;
+#container a.close {
+  top: 10px;
+  right: 10px;
+}
+#container form > div {
+  float: left;
+  width: 50%;
+  padding: 0 20px;
+  box-sizing: border-box;
 }
 #upload_img{
   font-family:'Nunito';
@@ -476,22 +476,19 @@ a.closeimg {
   justify-content: space-between;
   padding: 20px;
 }
-.titre {
+#container h3{
   width: 60%;
+  margin: 10px auto;
   text-align: center;
-  display: block;
-  margin: 0 auto;
-  border-bottom: 1px solid black;
-
-}
-.titre h3{
   font-family: 'Nunito';
   font-size: 20px;
+  border-bottom: 1px solid black;
+}
+.errorform {
+  text-align: center;
+  color: firebrick;
 }
 /*Upload de l'image*/
-.new_img{
-  width: 40%;
-}
 .new_img form{
   padding: 12px;
   margin-bottom: 15px;
@@ -525,7 +522,6 @@ input[type="submit"]{
 }
 /*Titre, description et catégorie*/
 .description{
-  width: 45%;
   margin-top: 12px;
 }
 .description input, .description textarea{
@@ -547,4 +543,14 @@ input[type="submit"]{
 }
 .item, .item1, .item2, .item3,.item4{
   display: flex;
+}
+/* Usable */
+.firebrickbg {
+  background-color: firebrick !important;
+}
+.firebrickborder {
+  border-color: firebrick;
+}
+.hidden {
+  display: none !important;
 }
