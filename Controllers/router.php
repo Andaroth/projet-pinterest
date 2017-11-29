@@ -14,11 +14,31 @@
     case 'login': $pagetitle .= " - Se connecter..."; break;
   }
   // Un switch pour déclencher les constructeurs
-  switch($action) {
-    case "login"||"register": 
-      $construct = new Account($action); break;
+  switch($action){
+    case "login":
+      if(empty($_POST["name"]){
+        echo "<div id=\"errormsg\">Merci d'indiquer un Nom!</div>";
+      }
+      else if(empty($_POST["pass"]){
+        echo "<div id=\"errormsg\">Merci d'indiquer un Mot de passe!</div>";
+      }
+      else {
+        $construct = new Account($action); break;
+      }
+      break;
+    case "register":
+      if(empty($_POST['username']){
+        echo "<div id=\"errormsg\">Merci d'indiquer un Pseudo!</div>";
+      }
+      else if(empty($_POST['mdp']){
+        echo "<div id=\"errormsg\">Merci d'indiquer un Mot de passe!</div>";
+      }
+      else {
+        $construct = new Account($action); break;
+      }
     case "upload":
       $construct = new Image(); break;
     default: break;
   }
+
 ?>
