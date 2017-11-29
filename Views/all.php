@@ -12,6 +12,7 @@
     include $inPage;
     include V."modal.register.php";
     include V."modal.onepicture.php";
+    include V."uploadform.php";
     include V."jscript.php";
   ?>
 </body>
