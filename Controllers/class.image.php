@@ -44,9 +44,21 @@ class Image {
     $req = $bdd->query("SELECT * FROM img LIMIT 100");
     foreach ($req as $thisQuery) { ?>
       <a class="grid-item" href="#<?= $thisQuery["id"] ?>">
-        <img src="<?= $thisQuery["url"] ?>" alt="road">
+        <img src="<?= $thisQuery["url"] ?>" alt="preview">
         <p class="imagetitle hidden"><?= $thisQuery["title"] ?></p>
         <p class="imagedescr hidden"><?= $thisQuery["description"] ?></p>
+      </a>
+<?php }
+  }
+  public function getAllImgAsAdmin() {
+    global $bdd;
+    $req = $bdd->query("SELECT * FROM img LIMIT 100");
+    foreach ($req as $thisQuery) { ?>
+      <a class="grid-item" href="#<?= $thisQuery["id"] ?>">
+        <img src="<?= $thisQuery["url"] ?>" alt="admin preview">
+        <p class="imagetitle hidden"><?= $thisQuery["title"] ?></p>
+        <p class="imagedescr hidden"><?= $thisQuery["description"] ?></p>
+        <a href="./?action=delete&todel=<?= $thisQuery["id"] ?>">Supprimer cette image (définitif)</a>
       </a>
 <?php }
   }
@@ -56,8 +68,12 @@ class Image {
   private function getImgCat($imageid) {
 
   } // getImgCat end
-  private function delImg($imageid) {
-    
+  public function delImg($imageid) {
+    global $bdd;
+    echo "imageid: ".$imageid;
+    try {
+      $bdd->exec("DELETE FROM img WHERE id='".$imageid."'");
+    } catch(Exception $e){echo "erreur delimg: ".($e->getMessage());die();}
   }
 } // class Image end
 
