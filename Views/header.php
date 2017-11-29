@@ -31,7 +31,6 @@
       if ( (isset($_SESSION ['login'])) && ($_SESSION ['login']==true) )  {
     ?>
     <ul id="usermenu" class="usermenu hidden">
-      <li><a href="#">Profil</a></li>
       <?php if (($_SESSION["admin"]  > 0 ) && (isset($_SESSION["admin"]))) {?>
       <li><a href="./?page=admin">Administration</a></li><?php } ?>
       <li><a href="./?action=logout">Déconnexion</a></li>

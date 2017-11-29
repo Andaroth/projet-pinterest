@@ -56,8 +56,6 @@ class Image {
     foreach ($req as $thisQuery) { ?>
       <a class="grid-item" href="#<?= $thisQuery["id"] ?>">
         <img src="<?= $thisQuery["url"] ?>" alt="admin preview">
-        <p class="imagetitle hidden"><?= $thisQuery["title"] ?></p>
-        <p class="imagedescr hidden"><?= $thisQuery["description"] ?></p>
         <a href="./?action=delete&todel=<?= $thisQuery["id"] ?>">Supprimer cette image (définitif)</a>
       </a>
 <?php }
@@ -70,7 +68,6 @@ class Image {
   } // getImgCat end
   public function delImg($imageid) {
     global $bdd;
-    echo "imageid: ".$imageid;
     try {
       $bdd->exec("DELETE FROM img WHERE id='".$imageid."'");
     } catch(Exception $e){echo "erreur delimg: ".($e->getMessage());die();}
