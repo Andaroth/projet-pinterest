@@ -1,0 +1,88 @@
+body {
+  overflow: auto;
+}
+
+main#home {
+  width: 90%;
+  margin-top: 30%;
+}
+
+#registermodal .modal-content {
+  width: 330px;
+  height: 100%;
+  margin-right: 40px;
+  margin-top: 40px;
+}
+.signin {
+  width: 90%;
+}
+.signup {
+  width: 90%;
+}
+.flright {
+  text-align: center;
+  margin-top: 15%;
+
+}
+.topbar {
+  text-align: center;
+  width: 90%;
+  margin-left: 20px;
+}
+.searchbar {
+  text-align: center;
+  width: 69%;
+
+}
+.opencat, .searchclic{
+  text-align: center;
+}
+.searchbox {
+  margin-bottom: 3%;
+  margin-left: 17%;
+}
+.sitelogo {
+  display: block;
+  width : 100%;
+  margin-left: 140px;
+}
+#profilicon {
+  text-align: center;
+  margin-left: 20%;
+}
+
+#usermenu {
+  margin-top: 32%;
+  margin-right: 37%;
+}
+
+#catlist {
+  width: 100%;
+}
+
+#container {
+  width: 90%;
+  margin-top: 30%;
+  height: 150%;
+}
+#container form > div {
+    float: left;
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-left: 13%;
+}
+input[type="submit"] {
+    display: block;
+    margin-top: 105%;
+    position: absolute;
+}
+#description {
+  width: 80%;
+}
+.modalphoto {
+  margin-top: 25%;
+}
+ {
+
+}
