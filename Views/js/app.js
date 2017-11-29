@@ -1,5 +1,56 @@
 $(document).ready(function() {
   
+  $("#registermodal input").focusout(function() {
+    if ($(this).val() == "") {
+      var inputype = $(this).attr("type");
+      switch (inputype) {
+        case 'password':
+          $(".errorform").text("Indiquez un mot de passe !");
+          break;
+        case 'text': 
+          var doubletype = $(this).attr("name");
+          switch(doubletype) {
+            case 'name'||'username':
+              $(".errorform").text("Entrez un nom d'utilisateur !");
+              break;
+            case 'mail':
+              $(".errorform").text("Renseignez votre mail !");
+              break;
+            default: 
+              $(".errorform").text("Vous devez remplir tous les champs !");
+              break;
+          }
+          $(".errorform").text("Le champ "+$(this).attr("name")+" ne peut être vide !");
+      }
+    }
+    else {
+      $(".errorform").text();
+    }
+  });
+  
+  $(".form1 input").on("input", function() {
+    if(
+      ($("#pseudoinput").val() != "") &&
+      ($("#mailinput").val() != "") &&
+      ($("#passinputOne").val() != "") &&
+      ($("#passinputTwo").val() == $("#passinputOne").val()) 
+    ) { 
+      $("#submitOne").removeClass("hidden");
+    } else {
+      $("#submitOne").addClass("hidden");
+    }
+  });
+  $(".form2 input").on("input", function() {
+    if(
+      ($("#usernamle").val() != "") &&
+      ($("#mdp").val() != "") 
+    ) { 
+      $("#submitTwo").removeClass("hidden");
+    } else {
+      $("#submitTwo").addClass("hidden");
+    }
+  });
+  
   $("#pseudoinput").attr("value", "Pseudo");
   
   $("#mailinput").attr("value", "votre@mail");
@@ -12,6 +63,12 @@ $(document).ready(function() {
       $(".img_upload").children("input").addClass["hidden"];
     }
     // $("#filePreview").attr("src", window.URL.createObjectURL(thisPic));
+  });
+  
+  $("#sendpic").click(function(e) {
+    e.preventDefault();
+    $("#home").addClass("hidden");
+    $("#container").removeClass("hidden");
   });
   
   $(".grid-item").click(function(e) {
