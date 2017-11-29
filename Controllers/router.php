@@ -4,7 +4,7 @@
   $inPage = (file_exists(V.$page.".php")) ? V.$page.".php" : V."gallery.php" ;
   // Un switch pour changer le titre de la page
   switch ($page) {
-    case 'admin': $pagetitle .= " - Page d'administration"; break;
+    case 'admin': $pagetitle = $sitetitle." - Page d'administration"; break;
     default: $pagetitle="Bienvenue sur ".$sitetitle." !"; break;
   }
   // Un switch pour indiquer l'action en cours dans le titre
@@ -79,6 +79,13 @@
       $_SESSION["login"] == false;
       session_destroy();
       header("refresh:0; url=./");
+      break;
+    case 'delete':
+      if (isset($_GET["todel"])) {
+      $do = new Image();
+      $do->delImg($_GET["todel"]);
+      }
+      break;
     default: break;
   }
 
