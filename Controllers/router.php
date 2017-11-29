@@ -15,27 +15,34 @@
   }
   // Un switch pour déclencher les constructeurs
   switch($action){
+    case "register":
+      if(empty($_POST['name'])){
+        echo "<div id=\"errormsg\">Merci d'indiquer un Pseudo!</div>";
+      }
+      else if(empty($_POST['mail'])){
+        echo "<div id=\"errormsg\">Merci d'indiquer votre adresse mail!</div>";
+      }
+      else if(empty($_POST['pass'])){
+        echo "<div id=\"errormsg\">Merci d'indiquer un Mot de passe!</div>";
+      }
+      else if(($_POST['pass']) != ($_POST['pass2'])){
+        echo "<div id=\"errormsg\">Les mots de passe sont différents !</div>";
+      }
+      else {
+        $construct = new Account($action);
+      }
+      break; 
     case "login":
-      if(empty($_POST["name"]){
+      if(empty($_POST["username"])){
         echo "<div id=\"errormsg\">Merci d'indiquer un Nom!</div>";
       }
-      else if(empty($_POST["pass"]){
+      else if(empty($_POST["mdp"])){
         echo "<div id=\"errormsg\">Merci d'indiquer un Mot de passe!</div>";
       }
       else {
         $construct = new Account($action); break;
       }
       break;
-    case "register":
-      if(empty($_POST['username']){
-        echo "<div id=\"errormsg\">Merci d'indiquer un Pseudo!</div>";
-      }
-      else if(empty($_POST['mdp']){
-        echo "<div id=\"errormsg\">Merci d'indiquer un Mot de passe!</div>";
-      }
-      else {
-        $construct = new Account($action); break;
-      }
     case "upload":
       // $fileToUpload = $_POST["fileToUpload"];
       // $fileTitle = $_POST["fileTitle"];
@@ -65,8 +72,13 @@
       // }
       // else if ($("#nature, #voyage, #dessin, #animaux, #design") .is(":checked")) {
       else {
-          $construct = new Image(); break;
+          $construct = new Image();
       }
+      break;
+    case 'logout': 
+      $_SESSION["login"] == false;
+      session_destroy();
+      header("refresh:0; url=./");
     default: break;
   }
 

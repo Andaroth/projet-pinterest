@@ -33,7 +33,7 @@
     <ul id="usermenu" class="usermenu hidden">
       <li><a href="#">Profil</a></li>
       <li><a href="#">Mes images</a></li>
-      <li><form action="./?action=logout"><input type="submit" value="Déconnexion" /></form></li>
+      <li><a href="./?action=logout">Déconnexion</a></li>
     </ul>
     <?php } ?>
   </nav>
