@@ -1,8 +1,12 @@
 <?php
-  require_once "./Models/global.php";
-  require_once M."config.php";
-  require_once C."class.php";
-  require_once C."functions.php";
-  require_once C."router.php";
-  require_once V."all.php";
+  // vitals/globals
+  require "./Models/global.php";
+  require M."config.php";
+  // class
+  require C."class.account.php";
+  require C."class.image.php";
+  // Setup the view
+  require C."router.php";
+  // loads the view
+  require V."all.php";
 ?>
