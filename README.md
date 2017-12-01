@@ -38,7 +38,8 @@ Ce qui doit encore être réalisé:
 * Developpement progressive web app
 * Créer une unité graphique dans les différentes pages
 * Régler des bugs au niveau du css / javascript (positionnement des images) 
-* Supprimer le lien Git/Heroku au profit d'un FTP classique
+* Supprimer le lien Git/Heroku ~au profit d'un FTP classique~
+* Heroku ne prenant pas le FTP en charge, j'ai synchronisé l'app avec la master PUIS je l'ai désynchronisé
 
 ## Compétences validées
 
