@@ -13,7 +13,7 @@ Ce que nous avons réalisé => [Becode_Pinto]() lien du site à mettre.
 Nous avons réalisé ce projet du 20/11/2017 au 29/11/2017.
 Notre formateur, nous a laissé 8 jours ouvrables pour réaliser le projet. Une journée a été consacrée à des cours rattrapages concernant la POO.
 
-Projet réalisé par Axel, Delphine, Nicolas et Weichuan.
+Projet réalisé par [Axel](https://github.com/Andaroth), [Delphine](https://github.com/debraive), [Nicolas](https://github.com/Ezaaii) et [Weichuan](https://github.com/weichuan888).
 
 ## Techniques et langages utilisées
 * Javascript 
@@ -30,6 +30,7 @@ Autre chose?
 
 ## Difficultés rencontrées
 Nous avons eu beaucoup de difficultés avec la mise en place d'Héroku, ce qui a ralenti le processus. Les compétences limitées en back-end de Nico, Weichuan et Delphine ont fait que nous sommes resté bloqué plusieurs jours sur quelques lignes de codes.
+
 
 ## Progression
 Ce qui doit encore être réalisé: 
