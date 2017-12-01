@@ -3,7 +3,9 @@
 ## Exercice réalisé dans le cadre de la formation BECODE (Novembre 2017)
 
 Le but du projet etait de refaire le site web Pinterest selon le souhait du client. 
+
 Leur site actuel =>  [Pinterest](https://www.pinterest.com/)
+
 Ce que nous avons réalisé => [Becode_Pinto]() lien du site à mettre. 
 
 [Consignes précises de l'exercice](https://github.com/becodeorg/Lovelace-promo-2/blob/master/Projects/projet-pinterest/readme.md)
