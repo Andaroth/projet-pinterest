@@ -46,7 +46,8 @@ Axel peux-tu ajouter les infos concernant les difficultés avec Heroku?
 Perso, j'ai découvert la mise en place des modals et l'appel des différents formulaires dans le code mais aussi les conditions de vérifications. Je me suis familiarisée avec Masonery et l'ajout de plugin. J'ai une meilleure compréhension global des l'organisation des différents fichiers et des appels des uns et des autres. J'ai aussi découvert l'utilisation des schémas UML. 
 
 #### Nico 
-J'ai compris la POO et j'ai un peu mieux compris les connexions PHP/DB. La logique était comprise rapidement mais j'ai toujours un problème avec la synthaxe de certaines commandes...
+J'ai pas mal amélioré mes compétences en backend.
+J'ai bien mieux compris la POO et j'ai un peu mieux compris les connexions PHP/DB. La logique en général était comprise rapidement mais j'ai toujours un problème avec la synthaxe de certaines commandes.
 
 #### Weichuan 
 
