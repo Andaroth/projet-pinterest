@@ -9,9 +9,9 @@ Ce que nous avons réalisé => [Becode_Pinto]() lien du site à mettre.
 [Consignes précises de l'exercice](https://github.com/becodeorg/Lovelace-promo-2/blob/master/Projects/projet-pinterest/readme.md)
 
 Nous avons réalisé ce projet du 20/11/2017 au 29/11/2017.
-Notre formateur, nous a laissé 8 jours ouvrables pour réaliser le projet. Une journée a été consacré à des cours rattrapages.
+Notre formateur, nous a laissé 8 jours ouvrables pour réaliser le projet. Une journée a été consacrée à des cours rattrapages concernant la POO.
 
-Projet aéalisé par Axel, Delphine, Nicolas et Weichuan.
+Projet réalisé par Axel, Delphine, Nicolas et Weichuan.
 
 ## Techniques et langages utilisées
 * Javascript 
@@ -45,7 +45,7 @@ Perso, j'ai découvert la mise en place des modals et l'appel des différents fo
 #### Nico 
 J'ai compris la POO et j'ai un peu mieux compris les connexions PHP/DB. La logique était comprise rapidement mais j'ai toujours un problème avec la synthaxe de certaines commandes...
 
-### Weichuan 
+#### Weichuan 
 
 Sur ce projet, je voulais me lancer un défi sur le backend...chose faite. 
 J'ai mieux compris le MVC ainsi que les connexions de PHP/DB. La mise en place de l'inscription et de la connexion entre le site web et de la base de données. Les conditions à mettre en place si l'image peut etre uploader.
