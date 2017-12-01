@@ -1,5 +1,13 @@
-# pinterest
-Bonjour, 
+# Projet pinterest
+
+Réalisé par Axel, Delphine, Nicolas et Weichuan.
+
+Le but du projet est de refaire le site web Pinterest selon le souhait du client. 
+Leur site actuel =>  [Pinterest](https://www.pinterest.com/)
+Ce que nous avons réalisé => [Becode_Pinto]() lien du site à mettre
+
+Nous avons réalisé ce projet du 20/11/2017 au 29/11/2017.
+Notre formateur, nous a laissé 8 jours ouvrables pour réaliser le projet. Une journée a été consacré à des cours rattrapages.
 
 Vous trouverez, ci-dessous, le récit de notre épopée dans le projet ‘Pinterest’. 
 Nous y aborderons les points suivants: 
@@ -22,6 +30,7 @@ Ressenti global? Pour ma part, bonne énergie, bon gestion de groupe, attention 
 
 --> Vous validez? 
 --> j'approuve ~Nico
+--> j'approuve aussi, nous avons bien regardé tout les aspects que nous devons réaliser pour ce projet. ~Weichuan
 
 #### Day 2 Go go go ! 
 On rentre dans le vif du sujet ! Après un bref retour sur les tâches se trouvant encore dans la colonne 'A faire', nous nous dispachons le travail. Wechuan et Nicolas n'ont peur de rien et s'engoufrent dans le back-end. Axel et Delphine se chargent du front-end. 
@@ -39,7 +48,6 @@ Dans l'ensemble, Nico essaie tant bien que mal d'avancer sur la sécurité des f
 #### Day 7 Le back-end m'a tué
 Nico est absent pour les deux prochains jours et Weichuan se rend à Charleroi pour presenter Becode. On avance sur front avec Axel. 
 
---> Weichuan tu nous fais un petit point? J'ai eu l'impression que c'était compliqué pour toi te reprendre le cours des choses à ton retour. 
 
 #### Day 8 Au finish
 Il reste beaucoup de chose à corriger. Des bugs arrivent encore et toujours. De la tention se fait sentir. 17H00, on a fait le max. Il est tant de passer à autre chose...
@@ -69,6 +77,12 @@ Perso, j'ai découvert la mise en place des modals et l'appel des différents fo
 #### Nico 
 J'ai compris la POO et j'ai un peu mieux compris les connexions PHP/DB. La logique était comprise rapidement mais j'ai toujours un problème avec la synthaxe de certaines commandes...
 
+### Weichuan 
+
+Sur ce projet, je voulais me lancer un défi sur le backend...chose faite. 
+J'ai mieux compris le MVC ainsi que les connexions de PHP/DB. La mise en place de l'inscription et de la connexion entre le site web et de la base de données. Les conditions à mettre en place si l'image peut etre uploader.
+
+
 ## Conclusion 
 
 ##### Delphine
@@ -76,3 +90,7 @@ Niveau de compétences dans le groupe trop différentes. Personnelement, ce proj
 
 #### Nico
 Mon manque de skill et de patience en backend est présent et se fait très vite ressentir... Et mon absence malencontreuse n'a pas aidé à la finalisation de ce projet... (sorry) 
+
+#### Weichuan
+Le projet était très difficile  sur le backend... surtout sur la POO et PHP. Je n'avais aucune connaissance sur la POO, je ressors avec quelques notions de cette matière. 
+C'était un dur projet, mes compétences n'étaient pas non plus à la hauteur...
