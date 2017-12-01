@@ -26,7 +26,6 @@ Projet réalisé par [Axel](https://github.com/Andaroth), [Delphine](https://git
 * Mise en place des card Github
 * Schemas UML
 
-Autre chose? 
 
 ## Difficultés rencontrées
 Nous avons eu beaucoup de difficultés avec la mise en place de Heroku, ce qui a ralenti le processus. Les compétences limitées en back-end de Nico, Weichuan et Delphine ont fait que nous sommes resté bloqué plusieurs jours sur quelques lignes de codes.
