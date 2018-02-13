@@ -5,6 +5,7 @@ class Account {
     public function __construct($action) {
         // extract($_POST);
         // extract($_GET);
+        $action = (isset($action)) ? $action : null;
         switch($action) {
             case 'register':
                     $name = $_POST['name'];
@@ -49,11 +50,20 @@ class Account {
         {
                 $_SESSION ['login'] = true;
                 $_SESSION ['name'] = $name;
+                $level = new Account(null);
+                $_SESSION ['admin'] = $level->getAuth($_SESSION["name"]);
                 echo "<div id=\"passedmsg\">Vous êtes bien connecté</div>";
         } else {
             echo "<div id=\"errormsg\">Vous avez entré de mauvais identifiants !</div>";
         }
 
+    }
+  
+    public function getAuth($name) {
+      global $bdd;
+      $req = $bdd->query("SELECT admin AS auth FROM users WHERE name= '".$name."'");
+      $row = $req->fetch();
+      return $row["auth"];
     }
 } // class Register end
 ?>
